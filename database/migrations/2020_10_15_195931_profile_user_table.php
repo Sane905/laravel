@@ -25,6 +25,14 @@ class ProfileUserTable extends Migration
 　　　　　　　
             // user_idとprofile_idの組み合わせの重複を許さない
             $table->unique(['user_id', 'profile_id'])->name('user_id_profile_id_unique');
+
+            $table->foreign('user_id')
+                ->references('id')->on('users')
+                ->onDelete('cascade');
+
+            $table->foreign('profile_id')
+            ->references('id')->on('profiles')
+            ->onDelete('cascade');
         });
     }
 
