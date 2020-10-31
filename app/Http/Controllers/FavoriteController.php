@@ -37,7 +37,7 @@ class FavoriteController extends Controller
     public function store($id)
     {   
         $profile=Profile::find($id);
-        $profile->users()->attach(Auth::id());
+        $profile->users()->sync(Auth::id());
         $count=$profile->users()->count();
         return response()->json([
                 'count'=>$count,
