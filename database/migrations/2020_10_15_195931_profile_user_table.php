@@ -13,7 +13,7 @@ class ProfileUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('profile_user', function (Blueprint $table) {
+        Schema::create('profile_user', function (Blueprint $table){
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('profile_id');
@@ -23,6 +23,8 @@ class ProfileUserTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('profile_id')->references('id')->on('profiles')->onDelete('cascade');
 　　　　　　　
+            // user_idとprofile_idの組み合わせの重複を許さない
+            $table->unique(['user_id', 'profile_id']);
 
             
         });
