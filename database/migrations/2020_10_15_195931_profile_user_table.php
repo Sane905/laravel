@@ -20,7 +20,7 @@ class ProfileUserTable extends Migration
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('profile_id')->references('id')->on('profiles')->onDelete('cascade');
-            $table->unique(['user_id','profile_id']);
+            $table->primary(['user_id','profile_id']);
 
             
         });
