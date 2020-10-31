@@ -17,11 +17,14 @@ class ProfileUserTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('profile_id');
-            $table->timestamps();    
+            $table->timestamps();
+
+             // 外部キー制約    
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('profile_id')->references('id')->on('profiles')->onDelete('cascade');
 　　　　　　　
-            $table->unique(['user_id', 'profile_id'])->name('user_id_profile_id_unique');
+            // user_idとprofile_idの組み合わせの重複を許さない
+            $table->unique(['profile_id', 'user_id'])->name('user_id_profile_id_unique');
 
             
         });
