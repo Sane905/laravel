@@ -19,12 +19,6 @@ class ProfileUserTable extends Migration
             $table->unsignedBigInteger('profile_id');
             $table->timestamps();
 
-             //外部キー制約    
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('profile_id')->references('id')->on('profiles')->onDelete('cascade');
-　　　　　　　
-            //user_idとprofile_idの組み合わせの重複を許さない
-            $table->unique(['user_id','profile_id']);
 
             
         });
