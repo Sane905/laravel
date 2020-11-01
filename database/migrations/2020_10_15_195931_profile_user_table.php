@@ -15,8 +15,8 @@ class ProfileUserTable extends Migration
     {
         Schema::create('profile_user', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('profile_id');
+            $table->bigIncrements('user_id');
+            $table->bigIncrements('profile_id');
             $table->timestamps();
 
              // 外部キー制約    
@@ -24,7 +24,7 @@ class ProfileUserTable extends Migration
             $table->foreign('profile_id')->references('id')->on('profiles')->onDelete('cascade');
 　　　　　　　
             // user_idとprofile_idの組み合わせの重複を許さない
-            $table->primary(['user_id', 'profile_id']);
+            $table->unique(['user_id', 'profile_id']);
             });
     }
 
