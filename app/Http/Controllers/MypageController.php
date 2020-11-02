@@ -9,8 +9,6 @@ use Illuminate\Support\Facades\Storage;
 use App\Profile;
 use Auth;
 use App\User;
-use InterventionImage;
-
 
 
 
@@ -25,22 +23,17 @@ class MypageController extends Controller
     {
         $user=Auth::id();
         $users=Profile::find($user);
-
         $profile=User::find($user);
+
         $favorite=User::find($user)->favorites();
-        
-        
+        $receive=$users->comment()->orderBy('created_at', 'desc')->paginate(5);
+        $sends=User::find($user)->comment()->orderBy('created_at', 'desc')->get();
+        $favorites=$users->users()->orderBy('created_at', 'desc')->get();
+        $goods=User::find($user)->favorites()->orderBy('created_at', 'desc')->get();
+        $relative=$favorite->pluck('profiles.user_id')->toArray();
+        $follows=$users->users()->whereIn('users.id',$relative)->orderBy('created_at', 'desc')->get();
 
-
-        
-    $receive=$users->comment()->orderBy('created_at', 'desc')->paginate(5);
-    $sends=User::find($user)->comment()->orderBy('created_at', 'desc')->get();
-    $favorites=$users->users()->orderBy('created_at', 'desc')->get();
-    $goods=User::find($user)->favorites()->orderBy('created_at', 'desc')->get();
-    $relative=$favorite->pluck('profiles.user_id')->toArray();
-    $follows=$users->users()->whereIn('users.id',$relative)->orderBy('created_at', 'desc')->get();
-
-    return view('mypage.index')->with(['users'=>$users,'receive'=>$receive,'sends'=>$sends,'favorites'=>$favorites,'goods'=>$goods,'follows'=>$follows]);
+        return view('mypage.index')->with(['users'=>$users,'receive'=>$receive,'sends'=>$sends,'favorites'=>$favorites,'goods'=>$goods,'follows'=>$follows]);
     }
 
     /**
