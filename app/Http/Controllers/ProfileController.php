@@ -8,7 +8,7 @@ use App\Profile;
 use App\User;
 use App\Age;
 use Auth;
-use Storage;
+use Illuminate\Support\Facades\Storage;
 
 
 
