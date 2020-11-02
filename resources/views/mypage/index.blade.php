@@ -54,36 +54,33 @@
 
       <div class="tab-content">
   <div id="receive" class="tab-pane active">
-  　 @forelse($receive as $comment)
-            <a href="band/{{$comment->user->profile->id}}">
-            <div class="border-top p-4">
+  　  @forelse($receive as $comment)
+        <a href="band/{{$comment->user->profile->id}}">
+          <div class="border-top p-4">
+              
+              <div class="d-flex">
+              <img class="mw-10 rounded-circle" src="storage/image/{{$comment->user->profile->image}}" width=50 height=50>
+                <p class="ml-3 mt-3">{{$comment->user->name}}</p>
+                <time class="text-secondary ml-3 mt-3">
+                    {{ $comment->created_at->format('Y.m.d H:i') }}
+                </time>
                 
-                <div class="d-flex">
-                <img class="mw-10 rounded-circle" src="storage/image/{{$comment->user->profile->image}}" width=50 height=50>
-                  <p class="ml-3 mt-3">{{$comment->user->name}}</p>
-                  <time class="text-secondary ml-3 mt-3">
-                      {{ $comment->created_at->format('Y.m.d H:i') }}
-                  </time>
-                  
-                </div>
-                
-                <p class="mt-2">
-                    {!! nl2br(e($comment->body)) !!}
-                </p>
-            </div>
-            
-            
-            </a>
-          
-        @empty
-            <p>コメントはまだありません。</p>
-        @endforelse
+              </div>
+              
+              <p class="mt-2">
+                  {!! nl2br(e($comment->body)) !!}
+              </p>
+          </div>
+        </a>
+      @empty
+          <p>コメントはまだありません。</p>
+      @endforelse
         <div class="paginate mt-5 d-flex justify-content-center">
         {{ $receive->links() }}
         </div>
   </div>
   <div id="send" class="tab-pane">
-  　 @forelse($sends as $send)
+  　  @forelse($sends as $send)
             <a href="band/{{$send->profile->id}}">
             <div class="border-top p-4">
                 
@@ -100,16 +97,12 @@
                     {!! nl2br(e($send->body)) !!}
                 </p>
             </div>
-
-
-            
-            
             </a>
           
-        @empty
-            <p>コメントはまだありません。</p>
-        @endforelse
-        
+      @empty
+          <p>コメントはまだありません。</p>
+      @endforelse
+      
       
 
   </div>
