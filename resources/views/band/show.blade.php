@@ -93,7 +93,7 @@
       
       </div>
       
-      <img class="rounded-circle" src="../storage/image/{{$comment->user->profile->image}}" width=50 height=50>
+      <img class="rounded-circle" src="{{$comment->user->profile->image}}" width=50 height=50>
       
       <p class="mt-2">
           {!! nl2br(e($comment->body)) !!}
