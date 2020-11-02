@@ -58,7 +58,7 @@
                         <a class="nav-link" href="{{action('SearchController@index')}}"><span class="fas fa-search mr-2"></span>オト仲間を探す</a>
                         </li>
                             <li class="nav-item dropdown d-flex">
-                            <img class="mw-10 rounded-circle" src="" width=40 height=40>
+                            <img class="mw-10 rounded-circle" src="{{Auth::user()->profile->image}}" width=40 height=40>
 
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
