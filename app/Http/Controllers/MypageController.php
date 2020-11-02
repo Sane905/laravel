@@ -156,7 +156,7 @@ class MypageController extends Controller
             if($request->hasFile('image')){
                 Storage::delete($profiles->image);
                 $url=$request->file('image');
-                $path=Storage::disk('s3')->putFile('/profile_image',$url,'public');
+                $path=Storage::disk('s3')->putFile('profile_image',$url,'public');
                 $profiles->image=Storage::disk('s3')->url($path);
                 $profiles->save();
             }
