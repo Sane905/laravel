@@ -10,7 +10,8 @@ use App\Profile;
 use Auth;
 use App\User;
 use InterventionImage;
-use Storage;
+use Illuminate\Support\Facades\Storage;
+
 
 
 class MypageController extends Controller
