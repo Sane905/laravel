@@ -10,7 +10,7 @@ use App\Profile;
 use Auth;
 use App\User;
 use InterventionImage;
-use Illuminate\Support\Facades\Storage;
+use Storage;
 
 
 
