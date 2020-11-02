@@ -10,6 +10,8 @@ use App\Profile;
 use Auth;
 use App\User;
 use InterventionImage;
+use Storage;
+
 
 class MypageController extends Controller
 {
@@ -151,9 +153,10 @@ class MypageController extends Controller
 
     
             if($request->hasFile('image')){
-                Storage::delete('public/image/'.$profiles->image);
-                $path=$request->file('image')->store('public/image');
-                $profiles->image=basename($path);
+                Storage::delete('profile_image',$profiles->image,'public');
+                $url=$request->file('image');
+                $path=Storage::disk('s3')->putFile('profile_image',$url,'public');
+                $profiles->image=Storage::disk('s3')->url($path);
                 $profiles->save();
             }
     

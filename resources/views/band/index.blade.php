@@ -168,7 +168,7 @@
       <div class="card mt-5">
         <a href="band/{{$profile->id}}">
 
-        <img class="card-img-top" src="storage/image/{{$profile->image}}" height=240 alt="Card image cap">
+        <img class="card-img-top" src="{{$profile->image}}" height=240 alt="Card image cap">
         <div class="card-body">
           <h4 class="card-title text-center">{{$profile->user->name}}</h4>
           <p class="card-text">

@@ -14,7 +14,7 @@
 
         @endif
       <div class="card">
-        <img class="card-img-top" src="../storage/image/{{$user->image}}" height=300>
+        <img class="card-img-top" src="{{$user->image}}" height=300>
           <div class="card-body">
           <h4 class="card-title text-center">{{$user->user->name}}</h4>
 

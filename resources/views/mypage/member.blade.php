@@ -4,7 +4,7 @@
   <div class="row justify-content-center">
     <div class="col-lg-6">
       <div class="card">
-        <img class="card-img-top" src="../storage/image/{{$users->image}}" height=300>
+        <img class="card-img-top" src="{{$users->image}}" height=300>
           <div class="card-body">
           <h4 class="card-title text-center">{{Auth::user()->name}}</h4>
 
