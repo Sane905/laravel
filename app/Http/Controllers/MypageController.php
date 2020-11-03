@@ -23,7 +23,7 @@ class MypageController extends Controller
     {
         $user=Auth::id();
         $users=Profile::find($user);
-        $receives=Profile::find($user)->comment()->orderBy('created_at','desc')->paginate(5);
+        $receives=$users->comment()->orderBy('created_at','desc')->paginate(5);
         $favorite=User::find($user)->favorites();
         $sends=User::find($user)->comment()->orderBy('created_at','desc')->get();
         $favorites=$users->users()->orderBy('created_at','desc')->get();
@@ -95,9 +95,7 @@ class MypageController extends Controller
     public function update(MypageRequest $request)
     {   
        
-        
-      
-      $user=Auth::user();
+        $user=Auth::user();
         
 
         unset($request->all()['_token']);

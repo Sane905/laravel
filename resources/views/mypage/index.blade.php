@@ -75,7 +75,7 @@
                 <p>コメントはまだありません。</p>
             @endforelse
               <div class="paginate mt-5 d-flex justify-content-center">
-              {{ $receives->links() }}
+              {{$receives->links()}}
               </div>
         </div>
         <div id="send" class="tab-pane">
