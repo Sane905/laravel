@@ -25,7 +25,7 @@ class MypageController extends Controller
         $users=Profile::find($user);
        
 
-        return view('mypage.index')->with(['users'=>$users]);
+        return view('mypage.index')->with('users',$users);
     }
 
     /**
