@@ -6,7 +6,7 @@
       <div class="col-lg-4">
 
         <div class="card">
-          <img class="card-img-top" src="{{$users->image}}" height=240 alt="Card image cap">
+          <img class="card-img-top" src="" height=240 alt="Card image cap">
           <div class="card-body">
             <h4 class="card-title text-center">{{Auth::user()->name}}</h4>
             <p>{{Auth::user()->email}}</p>
