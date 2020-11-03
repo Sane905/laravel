@@ -58,7 +58,7 @@
               <a href="band/{{$comment->user->profile->id}}">
                 <div class="border-top p-4">
                     <div class="d-flex">
-                    <img class="mw-10 rounded-circle" src="storage/image/{{$comment->user->profile->image}}" width=50 height=50>
+                    <img class="mw-10 rounded-circle" src="{{$comment->user->profile->image}}" width=50 height=50>
                       <p class="ml-3 mt-3">{{$comment->user->name}}</p>
                       <time class="text-secondary ml-3 mt-3">
                           {{ $comment->created_at->format('Y.m.d H:i') }}
@@ -74,14 +74,16 @@
             @empty
                 <p>コメントはまだありません。</p>
             @endforelse
-              
+              <div class="paginate mt-5 d-flex justify-content-center">
+              {{$receives->links()}}
+              </div>
         </div>
         <div id="send" class="tab-pane">
         　  @forelse($sends as $send)
                   <a href="band/{{$send->profile->id}}">
                   <div class="border-top p-4">
                       <div class="d-flex">
-                        <img class="mw-10 rounded-circle" src="storage/image/{{$send->profile->image}}" width=50 height=50>
+                        <img class="mw-10 rounded-circle" src="{{$send->profile->image}}" width=50 height=50>
                         <p class="ml-3 mt-3">{{$send->profile->user->name}}</p>
                         <time class="text-secondary ml-3 mt-3">
                             {{ $send->created_at->format('Y.m.d H:i') }}
@@ -108,7 +110,7 @@
                   <a href="band/{{$favorite->profile->id}}">
                   <div class="border-top p-4">
                       <div class="d-flex">
-                        <img class="mw-10 rounded-circle" src="storage/image/{{$favorite->profile->image}}" width=50 height=50>
+                        <img class="mw-10 rounded-circle" src="{{$favorite->profile->image}}" width=50 height=50>
                         <p class="ml-3">{{$favorite->name}}</p>
                         <p class="mr-3 ml-3">{{$favorite->profile->age}}</p>
                         <p>{{$favorite->profile->gender}}</p>
@@ -138,7 +140,7 @@
                   <a href="band/{{$good->id}}">
                   <div class="border-top p-4">
                       <div class="d-flex">
-                        <img class="mw-10 rounded-circle" src="storage/image/{{$good->image}}" width=50 height=50>
+                        <img class="mw-10 rounded-circle" src="{{$good->image}}" width=50 height=50>
                         
                         <div class="d-flex">
                           <p class="ml-3">{{$good->user->name}}</p>
@@ -167,7 +169,7 @@
                   <a href="band/{{$follow->profile->id}}">
                   <div class="border-top p-4">
                       <div class="d-flex">
-                        <img class="mw-10 rounded-circle" src="storage/image/{{$follow->profile->image}}" width=50 height=50>
+                        <img class="mw-10 rounded-circle" src="{{$follow->profile->image}}" width=50 height=50>
                         <p class="ml-3">{{$follow->name}}</p>
                         <p class="mr-3 ml-3">{{$follow->profile->age}}</p>
                         <p>{{$follow->profile->gender}}</p>
