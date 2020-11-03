@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests\MypageRequest;
 use App\Http\Requests\ProfileRequest;
 use Illuminate\Support\Facades\Storage;
-use App\Profile;
 use Auth;
+use App\Profile;
+use App\Comment;
 use App\User;
 
 
@@ -26,7 +27,6 @@ class MypageController extends Controller
         $profile=User::find($user);
 
         $receive=$users->comment()->orderBy('created_at','desc')->paginate(5);
-        var_dump($receive);
         $favorite=User::find($user)->favorites();
         $sends=User::find($user)->comment()->orderBy('created_at', 'desc')->get();
         $favorites=$users->users()->orderBy('created_at', 'desc')->get();
