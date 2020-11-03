@@ -69,12 +69,12 @@
                 <p>オトLABOではあなたが探したい音楽の趣味・志向に合う方を様々な条件でピンポイントに検索することが可能です。</p>
                 <p class="mb-0">身近にいなかったあなたの音楽の趣味・志向を共有出来る仲間をオトLABOでは即座に探せます。</p>
             </div>
-            <img class="d-flex align-self-center mr-3 col-lg-6 col-sm-12 rounded-lg" src="storage/image/markus-winkler-afW1hht0NSs-unsplash.jpg" alt="Generic placeholder image">
+            <img class="d-flex align-self-center mr-3 col-lg-6 col-sm-12 rounded-lg" src="https://musicwebservice.s3.ap-northeast-1.amazonaws.com/top/markus-winkler-afW1hht0NSs-unsplash.jpg" alt="Generic placeholder image">
 
             </div>
 
             <div class="media mt-5 row">
-            <img class="d-flex align-self-center mr-3 col-lg-6 col-sm-12 rounded-lg" src="storage/image/jo-szczepanska-5aiRb5f464A-unsplash.jpg" alt="Generic placeholder image">
+            <img class="d-flex align-self-center mr-3 col-lg-6 col-sm-12 rounded-lg" src="https://musicwebservice.s3.ap-northeast-1.amazonaws.com/top/jo-szczepanska-5aiRb5f464A-unsplash.jpg" alt="Generic placeholder image">
             <div class="media-body col-lg-6 col-sm-12">
                 <h5 class="mt-0 text-center">コメントや掲示板機能が充実</h5>
 　　　　　　　　　<p>オトLABOでは検索するだけでなく気に入ったユーザーにコメントすることが可能です。</p>
@@ -89,7 +89,7 @@
                 <p>オトLABOではいいね機能が実装されておりユーザー間でお互いにいいねしているとプライベートチャットが可能になります。</ｐ>
                 <p class="mb-0">あなたの音楽の趣味・志向に合う仲間とより密接なコミュニケーションを取ることが出来ます。</p>
             </div>
-            <img class="d-flex align-self-center mr-3 col-lg-6 col-sm-12 rounded-lg" src="storage/image/joshua-ness--bEZ_OfWu3Y-unsplash.jpg" alt="Generic placeholder image">
+            <img class="d-flex align-self-center mr-3 col-lg-6 col-sm-12 rounded-lg" src="https://musicwebservice.s3.ap-northeast-1.amazonaws.com/top/joshua-ness--bEZ_OfWu3Y-unsplash.jpg" alt="Generic placeholder image">
             </div>
         
         </div>
