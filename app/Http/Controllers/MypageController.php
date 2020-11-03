@@ -22,10 +22,10 @@ class MypageController extends Controller
     public function index()
     {
         $user=Auth::id();
-        $users=Profile::find($user);
+        $u=Profile::find($user);
        
 
-        return view('mypage.index',['users',$users]);
+        return view('mypage.index',['u',$u]);
     }
 
     /**
