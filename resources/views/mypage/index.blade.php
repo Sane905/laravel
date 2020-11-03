@@ -57,7 +57,6 @@
         　  @forelse($receives as $comment)
               <a href="band/{{$comment->user->profile->id}}">
                 <div class="border-top p-4">
-                    
                     <div class="d-flex">
                     <img class="mw-10 rounded-circle" src="storage/image/{{$comment->user->profile->image}}" width=50 height=50>
                       <p class="ml-3 mt-3">{{$comment->user->name}}</p>
@@ -83,7 +82,6 @@
         　  @forelse($sends as $send)
                   <a href="band/{{$send->profile->id}}">
                   <div class="border-top p-4">
-                      
                       <div class="d-flex">
                         <img class="mw-10 rounded-circle" src="storage/image/{{$send->profile->image}}" width=50 height=50>
                         <p class="ml-3 mt-3">{{$send->profile->user->name}}</p>
@@ -111,7 +109,6 @@
         　　 @forelse($favorites as $favorite)
                   <a href="band/{{$favorite->profile->id}}">
                   <div class="border-top p-4">
-                      
                       <div class="d-flex">
                         <img class="mw-10 rounded-circle" src="storage/image/{{$favorite->profile->image}}" width=50 height=50>
                         <p class="ml-3">{{$favorite->name}}</p>
@@ -142,7 +139,6 @@
         　　 @forelse($goods as $good)
                   <a href="band/{{$good->id}}">
                   <div class="border-top p-4">
-                      
                       <div class="d-flex">
                         <img class="mw-10 rounded-circle" src="storage/image/{{$good->image}}" width=50 height=50>
                         
@@ -172,7 +168,6 @@
         　　 @forelse($follows as $follow)
                   <a href="band/{{$follow->profile->id}}">
                   <div class="border-top p-4">
-                      
                       <div class="d-flex">
                         <img class="mw-10 rounded-circle" src="storage/image/{{$follow->profile->image}}" width=50 height=50>
                         <p class="ml-3">{{$follow->name}}</p>
