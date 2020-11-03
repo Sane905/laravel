@@ -26,7 +26,7 @@ class MypageController extends Controller
         $profile=User::find($user);
 
         $favorite=User::find($user)->favorites();
-        $receive=Profile::find($user)->comment()->orderBy('created_at', 'desc')->get();
+        $receive=$users->comment->orderBy('created_at', 'desc')->paginate(5);
         $sends=User::find($user)->comment()->orderBy('created_at', 'desc')->get();
         $favorites=$users->users()->orderBy('created_at', 'desc')->get();
         $goods=User::find($user)->favorites()->orderBy('created_at', 'desc')->get();
