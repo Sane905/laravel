@@ -54,7 +54,7 @@
 
       <div class="tab-content">
   <div id="receive" class="tab-pane active">
-  　  @forelse($receive as $comment)
+  　  @forelse($receives as $comment)
         <a href="band/{{$comment->user->profile->id}}">
           <div class="border-top p-4">
               
@@ -76,7 +76,7 @@
           <p>コメントはまだありません。</p>
       @endforelse
         <div class="paginate mt-5 d-flex justify-content-center">
-        {{ $receive->links() }}
+        {{ $receives->links() }}
         </div>
   </div>
   <div id="send" class="tab-pane">
