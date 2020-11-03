@@ -164,30 +164,6 @@
             
         </div>
 
-        <div id="follow" class="tab-pane">
-        　　 @forelse($follows as $follow)
-                  <a href="band/{{$follow->profile->id}}">
-                  <div class="border-top p-4">
-                      <div class="d-flex">
-                        <img class="mw-10 rounded-circle" src="storage/image/{{$follow->profile->image}}" width=50 height=50>
-                        <p class="ml-3">{{$follow->name}}</p>
-                        <p class="mr-3 ml-3">{{$follow->profile->age}}</p>
-                        <p>{{$follow->profile->gender}}</p>
-                      </div>
-                      
-                      <div class="d-flex align-self-center justify-content-end">
-                        <a href="chat/{{$follow->id}}"><button type="button" class="btn btn-primary btn-block">チャットする</button></a>
-                      </div>
-
-                  </div>
-                  </a>
-                
-                
-            @empty
-                <p>相互気にした人はまだいません。</p>
-            @endforelse
-        </div>
-      </div> 
         
         </div>
 
