@@ -31,8 +31,9 @@ class MypageController extends Controller
         $favorites=$users->users()->orderBy('created_at', 'desc')->get();
         $goods=User::find($user)->favorites()->orderBy('created_at', 'desc')->get();
         $relative=$favorite->pluck('profiles.user_id')->toArray();
+        $follows=$users->users()->whereIn('users.id',$relative)->orderBy('created_at', 'desc')->get();
 
-        return view('mypage.index')->with(['users'=>$users,'receives'=>$receives,'sends'=>$sends,'favorites'=>$favorites,'goods'=>$goods]);
+        return view('mypage.index',['users'=>$users,'receives'=>$receives,'sends'=>$sends,'favorites'=>$favorites,'goods'=>$goods,'follows'=>$follows]);
     }
 
     /**
