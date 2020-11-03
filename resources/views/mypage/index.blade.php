@@ -11,7 +11,7 @@
             <h4 class="card-title text-center">{{Auth::user()->name}}</h4>
             <p>{{Auth::user()->email}}</p>
             <p class="card-text">
-              {{$users->introduce}}
+              
             </p>
             <a href="mypage/member" class="btn btn-primary btn-lg btn-block">詳しく見る</a>
           </div>
