@@ -68,7 +68,7 @@
               </div>
               
               <p class="mt-2">
-                  {!! nl2br(e($comment->comment->body)) !!}
+                  {!! nl2br(e($comment->body)) !!}
               </p>
           </div>
         </a>
