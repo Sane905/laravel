@@ -21,12 +21,12 @@ class SearchController extends Controller
             $profiles=Profile::where('user_id','<>',Auth::id())->paginate(6);
        }elseif($request->has('keyword')){
             $query->Where('introduce','LIKE',"%{$keyword}%")
-            ->Where('artist','LIKE',"%{$keyword}%")
-            ->Where('gender','LIKE',"%{$keyword}%")
-            ->Where('age','LIKE',"%{$keyword}%")
-            ->Where('place','LIKE',"%{$keyword}%")
-            ->Where('music','LIKE',"%{$keyword}%")
-            ->WhereHas('user',function($query)use($keyword){
+            ->orWhere('artist','LIKE',"%{$keyword}%")
+            ->orWhere('gender','LIKE',"%{$keyword}%")
+            ->orWhere('age','LIKE',"%{$keyword}%")
+            ->orWhere('place','LIKE',"%{$keyword}%")
+            ->orWhere('music','LIKE',"%{$keyword}%")
+            ->orWhereHas('user',function($query)use($keyword){
                 $query->where('name',$keyword);
             });
             $profiles=$query->paginate(6);
