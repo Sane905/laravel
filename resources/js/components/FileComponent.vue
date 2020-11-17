@@ -8,6 +8,7 @@
 
 <script>
   export default{
+  name: 'image', 
       data(){
       return{
           imageData:""
