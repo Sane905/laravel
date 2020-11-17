@@ -31,6 +31,7 @@ Vue.component('message-component',require('./components/MessageComponent.vue').d
 Vue.component('good-component',require('./components/GoodComponent.vue').default);
 Vue.component('favorite-component',require('./components/FavoriteComponent.vue').default);
 Vue.component('chat-component',require('./components/ChatComponent.vue').default);
+Vue.component('image-component',require('./components/ImageComponent.vue').default);
 
 const app = new Vue({
     el: '#app',
