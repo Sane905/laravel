@@ -1,7 +1,7 @@
 <template>
   <div class="file">
   <input name="image" type="file" accept="image/*" class="form-control-file" id="exampleFormControlFile1" @change="onFileChange($event)">
-  <img class="userInfo__icon" :src="imageData" v-if="imageData">
+  <img :src="imageData" v-if="imageData">
 
   </div>
 </template>

@@ -144,7 +144,7 @@
     
    <div class="form-group mt-4">
       <label for="formGroupExampleInput">プロフィール画像をのせてください。</label>
-      <image-component></image-component>
+      <file-component></file-component>
       @error('image')
       <span class="text-danger">{{ $message }}</span>
       @enderror
