@@ -24,7 +24,6 @@ class CreateProfilesTable extends Migration
             $table->string('gender');
             $table->string('image');
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
