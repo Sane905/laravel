@@ -7,14 +7,13 @@
 </template>
 
 <script>
-  export default{
-  name: 'image', 
+  export default{ 
       data(){
       return{
           imageData:""
-      }
+      };
   },
-  methods(){
+  methods:{
       onFileChange(e){
           const files=e.target.files;
 
