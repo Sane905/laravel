@@ -22,8 +22,8 @@ class MypageController extends Controller
     public function index()
     {
         $user=Auth::id();
-        $users=Profile::find($user);
-        $receives=$users->comment()->orderBy('created_at','desc')->paginate(5);
+        $users=Profile::where('user_id',$user);
+        $receives=$users->comment()->orderBy('created_at','desc')->get();
         $favorite=User::find($user)->favorites();
         $sends=User::find($user)->comment()->orderBy('created_at','desc')->get();
         $favorites=$users->users()->orderBy('created_at','desc')->get();
