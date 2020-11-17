@@ -22,7 +22,7 @@ class MypageController extends Controller
     public function index()
     {
         $user=Auth::id();
-        $users=Profile::where('user_id',$user);
+        $users=Profile::where('user_id',$user)->first();
         $receives=$users->comment()->orderBy('created_at','desc')->paginate(5);
         $favorite=User::find($user)->favorites();
         $sends=User::find($user)->comment()->orderBy('created_at','desc')->get();
