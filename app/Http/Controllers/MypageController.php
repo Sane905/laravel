@@ -23,7 +23,7 @@ class MypageController extends Controller
     {
         $user=Auth::id();
         $users=Profile::where('user_id',$user);
-        $receives=$users->comment->orderBy('created_at','desc')->get();
+        $receives=$users->comment()->orderBy('created_at','desc');
         $favorite=User::find($user)->favorites();
         $sends=User::find($user)->comment()->orderBy('created_at','desc')->get();
         $favorites=$users->users()->orderBy('created_at','desc')->get();
