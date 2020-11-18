@@ -1,16 +1,17 @@
 <template>
   <div class="form-group mt-4">
     <label for="formGroupExampleInput">プロフィール画像をのせてください。</label>
-    <input class="form-control-file" id="exampleFormControlFile1" type="file" name="image" accept="image/*" @change="onFileChange">
+    <input class="form-control-file" id="exampleFormControlFile1" type="file" name="image" @change="onFileChange">
     <img v-bind:src="imageData" v-if="imageData"> 
   </div>
 </template>
 
 <script>
   export default{ 
-      data:{
-    
+      data(){
+      return{
           imageData:""
+      };
   },
   methods:{
       onFileChange(e){
