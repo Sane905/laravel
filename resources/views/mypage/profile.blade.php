@@ -143,7 +143,7 @@
     </div>
 
     
-  <image-component></image-component>
+  <file-component></file-component>
     @error('image')
       <span class="text-danger">{{ $message }}</span>
       @enderror
