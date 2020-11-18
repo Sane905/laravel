@@ -7,6 +7,29 @@
 
 <script>
   export default{ 
-    
+      data(){
+      return{
+          imageData:""
+      };
+  },
+  mounted(){
+    console.log('Component mounted.')
+  },
+  methods:{
+      onFileChange(e){
+          const files=e.target.files;
+            if(files.length>0){ 
+            const file=files[0];
+            const reader=new FileReader();
+
+            reader.onload=(e)=>{
+              this.imageData=e.target.result;
+            };
+            reader.readAsDataURL(file);
+          }
+
+      }
+  
+    }
   }
 </script>
