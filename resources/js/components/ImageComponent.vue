@@ -8,10 +8,9 @@
 
 <script>
   export default{ 
-      data(){
-      return{
+      data:{
+    
           imageData:""
-      };
   },
   methods:{
       onFileChange(e){
