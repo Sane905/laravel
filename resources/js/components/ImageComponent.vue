@@ -24,11 +24,10 @@
               this.imageData=e.target.result;
             };
             reader.readAsDataURL(file);
-          
           }
-      }
 
-  }
+      }
   
-}
+    }
+  }
   </script>
