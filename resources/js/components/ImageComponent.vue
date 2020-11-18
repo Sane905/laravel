@@ -1,7 +1,7 @@
 <template>
   <div class="form-group mt-4">
     <label for="formGroupExampleInput">プロフィール画像をのせてください。</label>
-    <input name="image" type="file" accept="image/*" @change="onFileChange($event)" class="form-control-file" id="exampleFormControlFile1">
+    <input name="image" type="file" accept="image/*" @change="onFileChange" class="form-control-file" id="exampleFormControlFile1">
     <img v-bind:src="imageData" v-if="imageData"> 
   </div>
 </template>
@@ -15,7 +15,7 @@
   },
   methods:{
       onFileChange(e){
-          const files=e.target.file;
+          const files=e.target.files;
             if(files.length>0){
             const file=files[0];
             const reader=new FileReader();
