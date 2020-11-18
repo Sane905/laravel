@@ -142,7 +142,6 @@
       
     </div>
 
-    <image-component></image-component>
     
    <div class="form-group mt-4">
       <label for="formGroupExampleInput">プロフィール画像をのせてください。</label>
