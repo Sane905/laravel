@@ -28,7 +28,6 @@
 
       }
   
-    },
-    name: 'Home-page'
+    }
   }
-  </script>
+</script>
