@@ -1,8 +1,9 @@
 <template>
   <div class="form-group mt-4">
     <label for="formGroupExampleInput">プロフィール画像をのせてください。</label>
-    <input class="form-control-file" id="exampleFormControlFile1" type="file" name="image" accept="image/*" @change="onFileChange">
+    <input class="form-control-file" id="exampleFormControlFile1" type="file" ref="file" name="image" accept="image/*" @change="onFileChange">
     <img v-bind:src="imageData" v-if="imageData" height="240" width="50%"> 
+    <button class="btn btn-danger" v-if="imageData" @click="resetFile()">画像をリセット</button>
   </div>
 </template>
 
@@ -29,6 +30,12 @@
                 reader.readAsDataURL(file);
               }
 
+          },
+          resetFile(){
+            const input=this.$refs.file;
+            input.type='text';
+            input.type='file';
+            this.imageData='';
           }
       
         }

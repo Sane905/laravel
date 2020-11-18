@@ -2206,6 +2206,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2231,6 +2232,12 @@ __webpack_require__.r(__webpack_exports__);
 
         reader.readAsDataURL(file);
       }
+    },
+    resetFile: function resetFile() {
+      var input = this.$refs.file;
+      input.type = 'text';
+      input.type = 'file';
+      this.imageData = '';
     }
   }
 });
@@ -44380,6 +44387,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("input", {
+      ref: "file",
       staticClass: "form-control-file",
       attrs: {
         id: "exampleFormControlFile1",
@@ -44394,6 +44402,21 @@ var render = function() {
       ? _c("img", {
           attrs: { src: _vm.imageData, height: "240", width: "50%" }
         })
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.imageData
+      ? _c(
+          "button",
+          {
+            staticClass: "btn btn-danger",
+            on: {
+              click: function($event) {
+                return _vm.resetFile()
+              }
+            }
+          },
+          [_vm._v("画像をリセット")]
+        )
       : _vm._e()
   ])
 }
