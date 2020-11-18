@@ -1,6 +1,6 @@
 <template>
   <div class="file">
-  <input name="image" type="file" accept="image/*" v-on:change="onFileChange($event)" class="form-control-file" id="exampleFormControlFile1">
+  <input class="form-control-file" name="image" type="file" accept="image/*" v-on:change="onFileChange($event)">
   <img :src="imageData" v-if="imageData">
 
   </div>
