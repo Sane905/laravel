@@ -1,13 +1,9 @@
 <template>
-
-<div class="form-group mt-4">
-  <label for="formGroupExampleInput">プロフィール画像をのせてください。</label>
-  <input name="image" type="file" accept="image/*" @change="onFileChange($event)" class="form-control-file" id="exampleFormControlFile1">
-  <img :src="imageData" v-if="imageData"> 
-     
-</div>
-  
-
+  <div class="form-group mt-4">
+    <label for="formGroupExampleInput">プロフィール画像をのせてください。</label>
+    <input name="image" type="file" accept="image/*" @change="onFileChange($event)" class="form-control-file" id="exampleFormControlFile1">
+    <img :src="imageData" v-if="imageData"> 
+  </div>
 </template>
 
 <script>
