@@ -138,13 +138,12 @@
       
     </div>
     
-   <div class="form-group mt-4">
-      <label for="formGroupExampleInput">プロフィール画像をのせてください。</label>
-      <input name="image" type="file" class="form-control-file" id="exampleFormControlFile1">
+    <image-component></image-component>
+
       @error('image')
       <span class="text-danger">{{ $message }}</span>
       @enderror
-    </div>
+    
     <div class="form-group mt-4">
     <label for="formGroupExampleInput">居住地</label>
 　　<select name="place" type="text" class="custom-select">
