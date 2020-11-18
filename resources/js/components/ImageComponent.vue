@@ -1,5 +1,5 @@
 <template>
-  <div class="file">
+  <div id="file-preview">
   <input class="form-control-file" name="image" type="file" accept="image/*" v-on:change="onFileChange($event)">
   <img :src="imageData" v-if="imageData">
 
@@ -8,6 +8,7 @@
 
 <script>
   export default{ 
+      el: '#file-preview',
       data(){
       return{
           imageData:""
