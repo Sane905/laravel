@@ -12,10 +12,6 @@ use App\Events\TaskAdded;
 |
 */
 
-if(config('app.env') !== 'local'){
-    // asset()やurl()がhttpsで生成される
-    URL::forceScheme('https');
-}
 
 Route::get('/', function () {
     return view('top');
