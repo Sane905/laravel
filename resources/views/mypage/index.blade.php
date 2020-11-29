@@ -115,16 +115,11 @@
                         <p class="mr-3 ml-3">{{$favorite->profile->age}}</p>
                         <p>{{$favorite->profile->gender}}</p>
                       </div>
-
-                      <good-component
+                  </div>
+                  </a>
+                  <good-component
                       :user="{{json_encode($favorite)}}">
                       </good-component>
-                      
-                      
-                  </div>
-                  
-                  
-                  </a>
                 
                 
               @empty
