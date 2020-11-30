@@ -104,19 +104,27 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
   <tbody>
     <tr class="table-active">
       <td>users</td>
-      <td>profiles</td>
-      <td>comments</td>
-      <td>messages</td>
-      <td>chats</td>
-      <td>profile_user</td>
+      <td>登録ユーザー情報</td>
     </tr>
     <tr>
-      <td>登録ユーザー情報</td>
+      <td>profiles</td>
       <td>アカウント情報</td>
+    </tr>
+    <tr>
+      <td>comments</td>
       <td>ユーザーアカウントへの、コメントの情報</td>
+    </tr>
+    <tr>
+      <td>messages</td>
       <td>掲示板でのユーザーのメッセージ情報</td>
+    </tr>
+    <tr>
+      <td>chats</td>
       <td>受信者、送信者によるメッセージ情報</td>
-      <td>profileとuserの中間テーブル</td>
+    </tr>
+    <tr>
+      <td>profile_user</td>
+       <td>profileとuserの中間テーブル</td>
     </tr>
   </tbody>
 </table>
