@@ -4,7 +4,7 @@
 
 __音楽好きで同じ音楽の趣味を持つ人が繋がれるマッチングアプリです。__
 
-URL::<https://otolabo.net/>
+__URL::__ <https://otolabo.net/>
 
 ## アプリ概要
 
