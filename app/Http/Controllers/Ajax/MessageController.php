@@ -17,9 +17,9 @@ class MessageController extends Controller
      */
     public function index()
     {   
-        $user=Auth::id();
+        $user = Auth::id();
 
-        $query=Message::orderBy('id','desc');
+        $query = Message::orderBy('id','desc');
     
         return $query->get();
     }
@@ -31,7 +31,7 @@ class MessageController extends Controller
      */
     public function create(Request $request)
     {
-        $message=Message::create([
+        $message = Message::create([
             'body'=>$request->message,
             'user_id'=>Auth::id()
         ]);
