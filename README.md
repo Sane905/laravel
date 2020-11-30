@@ -22,7 +22,7 @@ __URL::__ <https://otolabo.net/>
 
 ## 開発した背景
 
-私は音楽が好きで洋楽が好きなのですが自分の周りの友人・知人は邦楽を聞いておりどうしても自分と音楽の趣味が合う仲間が見つかりませんでした。
+私は音楽が好きで特に洋楽が好きなのですが自分の周りの友人・知人は邦楽を聞いておりどうしても自分と音楽の趣味が合う仲間が見つかりませんでした。
 
 しかし、中学の同窓会で余り関わりのなかったクラスメートと話すと実は自分と同じバンドが好きだったことが判明し、周りの音楽の趣味に合わせ
 あえて自分が本当に好きな音楽について話さない人が多いことに気付きました。
@@ -35,9 +35,17 @@ Thank you for considering contributing to the Laravel framework! The contributio
 
 ## 使用技術
 
-・フロントエンド
+* フロントエンド
+  - Vue.js 2.6.12
+  - HTML/Css /Sass/Bootstrap 4.5.2
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+* バックエンド
+
+* インフラ
+
+* その他使用ツール
+
+
 
 ## Security Vulnerabilities
 
