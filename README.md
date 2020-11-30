@@ -35,12 +35,17 @@ Thank you for considering contributing to the Laravel framework! The contributio
 
 ## 使用技術
 
-* フロントエンド
-  - Vue.js 2.6.12
-  - HTML/Css /Sass/Bootstrap 4.5.2
+* __フロントエンド__
+  - __Vue.js 2.6.12__
+  - __Jquery 3.5.1__
+  - __HTML/Css /Sass/Bootstrap 4.5.2__
 
-* バックエンド
-
+* __バックエンド__
+  - __PHP 7.3.23__
+  - __Laravel 6.18.36__
+  - __PHPUnit 8.5.8__
+  - __Pusher__
+  
 * インフラ
 
 * その他使用ツール
