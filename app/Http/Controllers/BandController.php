@@ -13,20 +13,23 @@ class BandController extends Controller
 {
     //
 
-    public function index(){
+    public function index()
+    {
       
 
     }
 
     
 
-    public function show($id){
-        $user=Profile::find($id);
-        $comments=$user->comment()->orderBy('created_at', 'desc')->paginate(5);
+    public function show($id)
+    {
+        $user = Profile::find($id);
+        $comments = $user->comment()->orderBy('created_at', 'desc')->paginate(5);
         return view('band.show')->with(['user'=>$user,'comments'=>$comments]);
     }
 
-    public function create(){
+    public function create()
+    {
 
         return view('band.create');
     }
