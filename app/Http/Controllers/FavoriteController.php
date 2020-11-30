@@ -36,9 +36,9 @@ class FavoriteController extends Controller
      */
     public function store($id)
     {   
-        $profile=Profile::find($id);
+        $profile = Profile::find($id);
         $profile->users()->attach(Auth::id());
-        $count=$profile->users()->count();
+        $count = $profile->users()->count();
         return response()->json([
                 'count'=>$count,
         ]);
@@ -87,9 +87,9 @@ class FavoriteController extends Controller
      */
     public function destroy($id)
     {
-        $profile=Profile::find($id);
+        $profile = Profile::find($id);
         $profile->users()->detach(Auth::id());
-        $count=$profile->users()->count();
+        $count = $profile->users()->count();
         return response()->json([
                 'count'=>$count,
         ]);
@@ -97,8 +97,8 @@ class FavoriteController extends Controller
 
     public function count($id)
     {
-        $profile=Profile::find($id);
-        $count=$profile->users()->count();
+        $profile = Profile::find($id);
+        $count = $profile->users()->count();
         return response()->json($count);
 
     }
@@ -108,9 +108,9 @@ class FavoriteController extends Controller
         $profile=Profile::find($id);
 
         if($profile->users()->where('user_id',Auth::id())->exists()){
-            $result=true;
+            $result = true;
         }else{
-            $result=false;
+            $result = false;
         }
         return response()->json($result);
     }
