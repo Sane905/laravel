@@ -53,6 +53,7 @@ Thank you for considering contributing to the Laravel framework! The contributio
 
 * __その他使用ツール__
   - Visual Studio Code
+  - Photoshop
 
 
 
