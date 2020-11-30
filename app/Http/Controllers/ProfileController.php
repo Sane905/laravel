@@ -45,9 +45,9 @@ class ProfileController extends Controller
           
 
            if(isset($request->image)) {
-            $url=$request->file('image');
-            $path=Storage::disk('s3')->putFile('/profile',$url,'public');
-            $image=Storage::disk('s3')->url($path);
+            $url = $request->file('image');
+            $path = Storage::disk('s3')->putFile('/profile',$url,'public');
+            $image = Storage::disk('s3')->url($path);
         }else {
             $image = '';
         }    
@@ -55,7 +55,7 @@ class ProfileController extends Controller
            
 
             Profile::create([
-            'artist' => $request->artist,
+            'artist'=>$request->artist,
             'introduce'=>$request->introduce,
             'user_id'=>$request->user()->id,
             'age'=>$request->age,
