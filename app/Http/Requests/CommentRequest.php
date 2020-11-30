@@ -28,7 +28,8 @@ class CommentRequest extends FormRequest
         ];
     }
 
-    public function messages(){
+    public function messages()
+    {
         return[
             'body.required'=>'コメント文は必須です。',
             'body.max:140'=>'140字以内で入力してください。'
