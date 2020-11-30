@@ -61,6 +61,32 @@ Thank you for considering contributing to the Laravel framework! The contributio
 
 If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
+## 機能一覧
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+* __ユーザー登録関連__
+  - 新規登録、プロフィール編集機能
+  - アカウント登録　アカウント編集機能
+  - ログイン、ログアウト機能
+  - 画像登録の際のリアルタイム表示(Vue.js)
+
+* __Pusher連携__
+  - 相互フォロー同士によるチャット機能
+
+* __ユーザー検索機能__
+  - キーワードによる検索
+  - アカウント登録で入力した「年齢、居住地、音楽ジャンル」などの複数条件検索
+
+* __いいね機能__(Vue.js / ajax)
+
+* __コメント機能__
+  - マイページに自分がコメントした内容とユーザー、自分にコメントしたユーザーと内容も表示する。
+
+* __相互いいねユーザー、ログインユーザーがいいねしたユーザー、いいねされたユーザーの表示__
+  - リレーションを使用してマイページに表示させている。
+
+* __画像アップロード機能__ (AWS S3バケット)
+
+* __PHPUnitテスト__(全て終わっていない)
+
+* __レスポンシブWebデザイン__
+  
