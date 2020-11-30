@@ -51,7 +51,8 @@ Thank you for considering contributing to the Laravel framework! The contributio
   - __mysql 5.7.31__
   - __Apache 2.4.46__
 
-* その他使用ツール
+* __その他使用ツール__
+  Visual Studio Code
 
 
 
