@@ -11,16 +11,17 @@ use Auth;
 
 class CommentController extends Controller
 {
-    public function store(CommentRequest $request){
+    public function store(CommentRequest $request)
+    {
        Comment::create([
            'body'=>$request->body,
            'user_id'=>Auth::id(),
            'profile_id'=>$request->profile_id
        ]);
 
-    $id=$request->profile_id;
-    $user=Profile::find($id);
-    $comments=$user->comment()->orderBy('created_at', 'desc')->paginate(5);
+    $id = $request->profile_id;
+    $user = Profile::find($id);
+    $comments = $user->comment()->orderBy('created_at', 'desc')->paginate(5);
     session()->flash('complete_message', 'コメントの投稿が完了しました');
 
      
@@ -29,7 +30,8 @@ class CommentController extends Controller
 
     }
 
-    public function delete(){
+    public function delete()
+    {
 
         
     }
