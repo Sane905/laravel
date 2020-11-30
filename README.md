@@ -21,38 +21,12 @@ URL::[https://otolabo.net/](https://otolabo.net/)
 ・掲示板機能によりいいねに関わらず登録している全ユーザーとも匿名でやりとりできる
 
 ## 開発した背景
+私は音楽が好きで洋楽が好きなのですが自分の周りの友人・知人は邦楽を聞いておりどうしても自分と音楽の趣味が合う仲間が見つかりませんでした。
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+しかし、中学の同窓会で余り関わりのなかったクラスメートと話すと実は自分と同じバンドが好きだったことが判明し、周りの音楽の趣味に合わせ
+あえて自分が本当に好きな音楽について話さない人が多いことに気付きました。
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+こういった潜在的な音楽好きがより同じ音楽の趣向をもつ仲間と繋がって欲しいという思いから開発にいたりました。
 
 ## Contributing
 
