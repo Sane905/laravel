@@ -52,7 +52,7 @@ Thank you for considering contributing to the Laravel framework! The contributio
   - __Apache 2.4.46__
 
 * __その他使用ツール__
-  Visual Studio Code
+  - Visual Studio Code
 
 
 
