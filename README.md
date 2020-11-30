@@ -4,7 +4,7 @@
 
 音楽好きで同じ音楽の趣味を持つ人が繋がれるマッチングアプリです。
 
-URL::[https://otolabo.net/](https://otolabo.net/)
+URL::<https://otolabo.net/>
 
 ## アプリ概要
 
@@ -21,6 +21,7 @@ URL::[https://otolabo.net/](https://otolabo.net/)
 ・掲示板機能によりいいねに関わらず登録している全ユーザーとも匿名でやりとりできる
 
 ## 開発した背景
+
 私は音楽が好きで洋楽が好きなのですが自分の周りの友人・知人は邦楽を聞いておりどうしても自分と音楽の趣味が合う仲間が見つかりませんでした。
 
 しかし、中学の同窓会で余り関わりのなかったクラスメートと話すと実は自分と同じバンドが好きだったことが判明し、周りの音楽の趣味に合わせ
@@ -32,7 +33,9 @@ URL::[https://otolabo.net/](https://otolabo.net/)
 
 Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+## 使用技術
+
+・フロントエンド
 
 In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
