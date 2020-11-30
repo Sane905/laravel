@@ -97,16 +97,18 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
   <table class="table">
   <thead>
     <tr>
-      <th>#</th>
       <th>First Name</th>
       <th>Last Name</th>
     </tr>
   </thead>
   <tbody>
     <tr class="table-active">
-      <th scope="row">1</th>
       <td>Mark</td>
       <td>Otto</td>
+    </tr>
+    <tr>
+      <td>Jacob</td>
+      <td>Thornton</td>
     </tr>
   </tbody>
 </table>
