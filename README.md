@@ -45,8 +45,11 @@ Thank you for considering contributing to the Laravel framework! The contributio
   - __Laravel 6.18.36__
   - __PHPUnit 8.5.8__
   - __Pusher__
-  
-* インフラ
+
+* __インフラ__
+  - __AWS__(EC2, ALB, ACM, S3, RDS, Route53, VPC, IAM )
+  - __mysql 5.7.31__
+  - __Apache 2.4.46__
 
 * その他使用ツール
 
