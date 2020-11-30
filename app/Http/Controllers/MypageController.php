@@ -21,15 +21,15 @@ class MypageController extends Controller
      */
     public function index()
     {
-        $user=Auth::id();
-        $users=Profile::where('user_id',$user)->first();
-        $receives=$users->comment()->orderBy('created_at','desc')->paginate(5);
-        $favorite=User::find($user)->favorites();
-        $sends=User::find($user)->comment()->orderBy('created_at','desc')->get();
-        $favorites=$users->users()->orderBy('created_at','desc')->get();
-        $goods=User::find($user)->favorites()->orderBy('created_at','desc')->get();
-        $relative=$favorite->pluck('profiles.user_id')->toArray();
-        $follows=$users->users()->whereIn('users.id',$relative)->orderBy('created_at','desc')->get();
+        $user = Auth::id();
+        $users = Profile::where('user_id',$user)->first();
+        $receives = $users->comment()->orderBy('created_at','desc')->paginate(5);
+        $favorite = User::find($user)->favorites();
+        $sends = User::find($user)->comment()->orderBy('created_at','desc')->get();
+        $favorites = $users->users()->orderBy('created_at','desc')->get();
+        $goods = User::find($user)->favorites()->orderBy('created_at','desc')->get();
+        $relative = $favorite->pluck('profiles.user_id')->toArray();
+        $follows = $users->users()->whereIn('users.id',$relative)->orderBy('created_at','desc')->get();
 
         return view('mypage.index')->with(['users'=>$users,'receives'=>$receives,'sends'=>$sends,'favorites'=>$favorites,'goods'=>$goods,'follows'=>$follows]);
     }
@@ -63,8 +63,8 @@ class MypageController extends Controller
      */
     public function show()
     {
-        $user=Auth::id();
-        $users=Profile::find($user);
+        $user = Auth::id();
+        $users = Profile::find($user);
 
         
       
@@ -80,7 +80,7 @@ class MypageController extends Controller
     //userデータの編集
     public function edit()
     {
-        $auth=Auth::user();
+        $auth = Auth::user();
         return view('mypage.edit',['auth'=>$auth]);          
 
     }
@@ -97,7 +97,7 @@ class MypageController extends Controller
        
         
       
-      $user=Auth::user();
+      $user = Auth::user();
         
 
         unset($request->all()['_token']);
@@ -105,7 +105,7 @@ class MypageController extends Controller
         
         $user->fill($request->all())->save();
 
-        $user->password=bcrypt($request->get('new-password'));
+        $user->password = bcrypt($request->get('new-password'));
         $user->save();
 
         session()->flash('flash_message', 'ログイン情報の変更が完了しました');
@@ -126,29 +126,29 @@ class MypageController extends Controller
     //profilesデータの編集
     public function ProfileEdit(){
 
-        $profile=Auth::id();
-        $profiles=Profile::find($profile);
+        $profile = Auth::id();
+        $profiles = Profile::find($profile);
         return view('mypage.profile',['profiles'=>$profiles]);
     }
 
     public function ProfileUpdate(ProfileRequest $request){
-        $profile=Auth::id();
-        $profiles=Profile::find($profile);
+        $profile = Auth::id();
+        $profiles = Profile::find($profile);
         
         unset($request->all()['_token']);
 
-            $profiles->age=$request->age;
-            $profiles->place=$request->place;
-            $profiles->introduce=$request->introduce;
-            $profiles->music=implode("/", $request->music);
-            $profiles->gender=$request->gender;
+            $profiles->age = $request->age;
+            $profiles->place = $request->place;
+            $profiles->introduce = $request->introduce;
+            $profiles->music = implode("/", $request->music);
+            $profiles->gender = $request->gender;
 
     
             if($request->hasFile('image')){
                 Storage::disk('s3')->delete('profile',$profiles->image,'public');
-                $url=$request->file('image');
-                $path=Storage::disk('s3')->putFile('profile',$url,'public');
-                $profiles->image=Storage::disk('s3')->url($path);
+                $url = $request->file('image');
+                $path = Storage::disk('s3')->putFile('profile',$url,'public');
+                $profiles->image = Storage::disk('s3')->url($path);
                 $profiles->save();
             }
     
@@ -157,8 +157,8 @@ class MypageController extends Controller
         
         $profiles->save();
 
-        $user=Auth::id();
-        $users=Profile::find($user);
+        $user = Auth::id();
+        $users = Profile::find($user);
 
        
 
