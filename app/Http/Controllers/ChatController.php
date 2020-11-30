@@ -11,9 +11,10 @@ class ChatController extends Controller
 {
     
 
-    public function index(Request $request,$recieve){
+    public function index(Request $request,$recieve)
+    {
          // チャットの画面
-         $user=User::find($recieve);
+         $user = User::find($recieve);
          return view('chat.index')->with('user',$user);
     }
 
