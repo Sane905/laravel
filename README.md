@@ -91,15 +91,10 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 * __レスポンシブWebデザイン__
   
+## ER図
+
 
   <table class="table">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-    </tr>
-  </thead>
   <tbody>
     <tr class="table-active">
       <th scope="row">1</th>
