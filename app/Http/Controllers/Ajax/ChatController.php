@@ -18,8 +18,8 @@ class ChatController extends Controller
      */
     public function index($recieve)
     {
-        $user=Auth::id();
-        $query=Chat::with('user')->where('send',$user)->where('recieve',$recieve)->orderBy('id','desc');
+        $user = Auth::id();
+        $query = Chat::with('user')->where('send',$user)->where('recieve',$recieve)->orderBy('id','desc');
         $query->orWhere(function($query) use($user,$recieve){
             $query->where('send',$recieve);
             $query->where('recieve',$user);
@@ -37,7 +37,7 @@ class ChatController extends Controller
     public function create(Request $request)
     {   
       
-        $message=Chat::create([
+        $message = Chat::create([
             'message'=>$request->message,
             'send'=>Auth::id(),
             'recieve'=>$request->recieve
