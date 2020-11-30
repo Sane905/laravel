@@ -6,13 +6,21 @@
 
 URL::[https://otolabo.net/](https://otolabo.net/)
 
-## Learning Laravel
+## アプリ概要
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+こちらのアプリのコンセプトは、以下の２点です。
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+１音楽のジャンルに関わらず同じ音楽の趣味を持つ仲間を見つける。
+２仲間と音楽の話のやり取りができる。
 
-## Laravel Sponsors
+オトLABOには以下のような特徴のあるアプリです。
+
+・会員登録とは別にユーザーの音楽に関する情報をのせたアカウントを作成して「音楽のジャンル、所在地、年齢、性別」といった幅広い条件で他ユーザーに検索してもらうことができる。
+・アカウントに対しコメントをつけてもらうことでユーザーはマイページでコメントを確認して同じ音楽の趣味を持つ仲間を認知できる
+・いいね機能がありお互いにいいねをするとマイページ上の「相互いいね」欄にチャットボタンが表示し、密なやり取りが可能になる。
+・掲示板機能によりいいねに関わらず登録している全ユーザーとも匿名でやりとりできる
+
+## 開発した背景
 
 We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
