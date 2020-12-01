@@ -30,7 +30,7 @@ class SearchController extends Controller
             ->orWhereHas('user',function($query)use($keyword){
                 $query->where('name',$keyword);
             });
-            $profiles = $query->where('user_id' ,'<>' , Auth::id())->paginate(6);
+            $profiles = $query->paginate(6);
         }elseif($request->has('age')&&$age!=('error')&&$request->has('place')&&$place!=('error')&&$request->has('gender')&&$request->has('music')&&$music!=('error')){
         $query->Where('age',$age)
         ->Where('place',$place)
