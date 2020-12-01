@@ -11,7 +11,6 @@ use App\Events\TaskAdded;
 | contains the "web" middleware group. Now create something great!
 |
 */
-set_time_limit(120);
 
 
 Route::get('/', function () {
