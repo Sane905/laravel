@@ -58,7 +58,7 @@ Thank you for considering contributing to the Laravel framework! The contributio
 
 
 ## AWS構成図
-<img src="/storage\app\public\image\Untitled Diagram.jpg" alt="">
+<img src="storage\public\image\Untitled Diagram.jpg" alt="">
 
 ## 機能一覧
 
