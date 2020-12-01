@@ -57,9 +57,8 @@ Thank you for considering contributing to the Laravel framework! The contributio
 
 
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## AWS構成図
+<img src="/storage\app\public\image\Untitled Diagram.jpg" alt="">
 
 ## 機能一覧
 
