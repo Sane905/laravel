@@ -1,6 +1,5 @@
 <?php
-use App\Events\MessageCreated;
-use App\Events\TaskAdded;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
