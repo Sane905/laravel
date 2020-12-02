@@ -1,5 +1,8 @@
 <?php
-
+if(config('app.env') !== 'local'){
+    // asset()やurl()がhttpsで生成される
+    URL::forceScheme('https');
+}
 /*
 |--------------------------------------------------------------------------
 | Web Routes
