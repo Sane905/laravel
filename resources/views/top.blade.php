@@ -119,7 +119,7 @@
                 </h5>
                 </div>
 
-                <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
                 <div class="card-body">
                 音楽仲間を増やすためのソーシャルネットワークサービスなので金銭がかかることはありません。
                 </div>
