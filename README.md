@@ -58,7 +58,7 @@ Thank you for considering contributing to the Laravel framework! The contributio
 
 
 ## AWS構成図
-
+<img src="インフラ図.svg" />
 
 ## 機能一覧
 
