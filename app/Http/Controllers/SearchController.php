@@ -7,7 +7,7 @@ use App\Profile;
 use Auth;
 class SearchController extends Controller
 {
-    public function index(Request $request)
+    private function index(Request $request)
     {
         $place = $request->place;
         $age = $request->age;
