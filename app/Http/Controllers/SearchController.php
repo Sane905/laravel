@@ -16,7 +16,7 @@ class SearchController extends Controller
         $music = $request->music;
 
         
-        $profiles = Profile::where('user_id' ,'=' , 1)->paginate(6);
+        $profiles = Profile::where('user_id' ,'=' , 1);
         return view('band.index')->with(['keyword'=>$keyword,'profiles'=>$profiles]);
 
     }
