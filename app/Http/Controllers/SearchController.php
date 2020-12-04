@@ -13,7 +13,7 @@ class SearchController extends Controller
         $keyword = $request->keyword;
 
         
-        $profiles = Profile::where('user_id' ,'<>' , Auth::id())->paginate(6);
+        $profiles = Profile::where('user_id' ,'<>' , Auth::id());
         
         return view('band.index')->with(['keyword'=>$keyword,'profiles'=>$profiles]);
 
