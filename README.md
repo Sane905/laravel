@@ -29,9 +29,6 @@ __URL::__ <https://otolabo.net/>
 
 こういった潜在的な音楽好きがより同じ音楽の趣向をもつ仲間と繋がって欲しいという思いから開発にいたりました。
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
 ## 使用技術
 
@@ -91,6 +88,8 @@ Thank you for considering contributing to the Laravel framework! The contributio
 * __レスポンシブWebデザイン__
   
 ## ER図
+
+<img src="ER図.svg">
 
 
   <table class="table">
