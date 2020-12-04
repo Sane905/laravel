@@ -55,7 +55,7 @@ __URL::__ <https://otolabo.net/>
 
 
 ## AWS構成図
-<img src="![インフラ図](https://user-images.githubusercontent.com/69663908/101127195-5b26ac00-3640-11eb-9bf5-90a10cbb7575.png)">
+![インフラ図](https://user-images.githubusercontent.com/69663908/101127195-5b26ac00-3640-11eb-9bf5-90a10cbb7575.png)
 
 ## 機能一覧
 
