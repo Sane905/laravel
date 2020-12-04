@@ -9,15 +9,6 @@ class SearchController extends Controller
 {
     public function index(Request $request)
     {
-        
-
-        $profiles = Profile::where('user_id' ,'<>' , Auth::id())->paginate(6);
-        
-        return view('band.index')->with(['profiles'=>$profiles]);
-
-    }
-
-    public function show(){
         $place = $request->place;
         $age = $request->age;
         $keyword = $request->keyword;
@@ -112,5 +103,8 @@ class SearchController extends Controller
             $profiles = Profile::where('user_id' ,'<>' , Auth::id())->paginate(6);
 
         }
+        
+        return view('band.index')->with(['keyword'=>$keyword,'profiles'=>$profiles]);
+
     }
 }
