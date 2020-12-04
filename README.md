@@ -55,7 +55,7 @@ __URL::__ <https://otolabo.net/>
 
 
 ## AWS構成図
-<img src="インフラ図.svg">
+
 
 ## 機能一覧
 
@@ -89,7 +89,7 @@ __URL::__ <https://otolabo.net/>
   
 ## ER図
 
-<img src="ER図.svg">
+
 
 
   <table class="table">
