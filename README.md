@@ -51,7 +51,7 @@ __URL::__ <https://otolabo.net/>
 * __その他使用ツール__
   - Visual Studio Code
   - Photoshop
-
+  - draw.io
 
 
 ## AWS構成図
