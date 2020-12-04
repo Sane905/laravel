@@ -31,7 +31,7 @@ __URL::__ <https://otolabo.net/>
 
 ## 使用画面のイメージ
 
-![使用画面のイメージ](https://user-images.githubusercontent.com/69663908/101136061-1440b280-3650-11eb-97bf-c0b0cd002ea3.png)
+![使用画面のイメージ](https://user-images.githubusercontent.com/69663908/101140351-31787f80-3656-11eb-8e4f-ea7c79ea31b4.png)
 
 
 
