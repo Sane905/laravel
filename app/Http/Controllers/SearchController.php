@@ -9,7 +9,6 @@ class SearchController extends Controller
 {
     public function index(Request $request)
     {
-        $profiles = Profile::all()->get();
         $place = $request->place;
         $age = $request->age;
         $keyword = $request->keyword;
@@ -18,6 +17,8 @@ class SearchController extends Controller
 
         
         $query = Profile::query();
+
+        $profiles = $query->all()->get();
 
       if($request->has('keyword')){
             $query->Where('introduce','LIKE',"%{$keyword}%")
