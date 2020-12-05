@@ -46,6 +46,9 @@
                             <a class="nav-link" href="{{action('SearchController@index')}}"><span class="fas fa-search mr-2"></span>オト仲間を探す</a>
                             </li>
                             <li class="nav-item">
+                            <a class="nav-link" href="message">オト仲間掲示板</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))

@@ -54,9 +54,6 @@
                         <li class="nav-item">
                         <a class="nav-link" href="{{action('SearchController@index')}}"><span class="fas fa-search mr-2"></span>オト仲間を探す</a>
                         </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="message"><span class="fas fa-search mr-2"></span>オト仲間掲示板</a>
-                        </li>
                             <li class="nav-item dropdown d-flex">
                             <img class="mw-10 rounded-circle" src="{{Auth::user()->profile->image}}" width=40 height=40>
 
