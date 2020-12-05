@@ -25,5 +25,9 @@ class Profile extends Model
         return $this->belongsToMany('App\User')->withTimestamps();
     }
 
+    public function scopeOpen($query){
+        return $profiles = Profile::where('user_id' ,'=' , 1);
+    }
+
 
 }

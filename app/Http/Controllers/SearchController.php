@@ -9,7 +9,7 @@ class SearchController extends Controller
 {
     public function index(Request $request)
     {
-        $profiles = Profile::where('user_id' ,'=' , 1)->paginate(6);
+        $profiles = Profile::open()->paginate(6);
         $place = $request->place;
         $age = $request->age;
         $keyword = $request->keyword;
