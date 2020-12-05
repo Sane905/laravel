@@ -34,6 +34,7 @@ class Profile extends Model
 
     public function scopeKey($query)
     {
+        $keyword = $request->keyword;
         return $query->Where('introduce','LIKE',"%{$keyword}%")
         ->orWhere('artist','LIKE',"%{$keyword}%")
         ->orWhere('gender','LIKE',"%{$keyword}%")
