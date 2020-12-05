@@ -35,7 +35,7 @@ class SearchController extends Controller
         ->Where('music','LIKE',"%{$music}%")
         ->Where('gender',$gender);
 
-        $profiles = $query->where('user_id' ,'<>' , Auth::id())->paginate(0);
+        $profiles = $query->paginate(0);
         }elseif($request->has('age')&&$age!=('error')&&$request->has('place')&&$place!=('error')&&$request->has('gender')){
             $query->Where('age',$age)
                     ->Where('place',$place)
@@ -71,7 +71,7 @@ class SearchController extends Controller
         }elseif($request->has('gender')&&$request->has('music')&&$music!=('error')&&$place=('error')&&$age=('error')){
                 $query->Where('gender',$gender)
                 ->Where('music','LIKE',"%{$music}%");
-                $profiles = $query->where('user_id' ,'<>' , Auth::id())->paginate(0);
+                $profiles = $query->paginate(0);
         }elseif($request->has('age')&&$age!=('error')&&$request->has('gender')&&$place=('error')&&$music==('error')){
                 $query->Where('gender',$gender)
                 ->Where('age',$age);
