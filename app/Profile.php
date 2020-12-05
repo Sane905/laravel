@@ -33,17 +33,9 @@ class Profile extends Model
         return $profiles = Profile::where('user_id' ,'<>' , Auth::id());
     }
 
-    public function scopeKey($query, $keyword)
+    public function scopeGender($query, $gender)
     {
-        return $query->Where('introduce','LIKE',"%{$keyword}%")
-        ->orWhere('artist','LIKE',"%{$keyword}%")
-        ->orWhere('gender','LIKE',"%{$keyword}%")
-        ->orWhere('age','LIKE',"%{$keyword}%")
-        ->orWhere('place','LIKE',"%{$keyword}%")
-        ->orWhere('music','LIKE',"%{$keyword}%")
-        ->orWhereHas('user',function($query)use($keyword){
-            $query->where('name',$keyword);
-        });
+        return $query->Where('gender',$gender);
     }
 
 
