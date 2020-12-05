@@ -18,7 +18,9 @@ class SearchController extends Controller
 
         $query = Profile::query();
 
-        if($request->has('keyword')){
+        if($place==('error')&&empty($keyword)&&$age==('error')&&empty($gender)&&$music==('error')){
+            $profiles = Profile::all();
+        }elseif($request->has('keyword')){
             $query->Where('introduce','LIKE',"%{$keyword}%")
             ->orWhere('artist','LIKE',"%{$keyword}%")
             ->orWhere('gender','LIKE',"%{$keyword}%")
