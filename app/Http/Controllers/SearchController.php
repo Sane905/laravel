@@ -29,6 +29,9 @@ class SearchController extends Controller
                 $query->where('name',$keyword);
             });
             $profiles = $query;
+        }else{
+                $query->all();
+                $profiles = $query;
         }
         return view('band.index')->with(['keyword'=>$keyword,'profiles'=>$profiles]);
 
