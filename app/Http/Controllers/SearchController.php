@@ -23,7 +23,7 @@ class SearchController extends Controller
 
     public function show(Request $request)
     {
-    $query = Profile::query()->where('user_id','<>',Auth::id());
+    $query = Profile::open()->where('user_id','<>',Auth::id());
     $place = $request->place;
     $age = $request->age;
     $keyword = $request->keyword;
