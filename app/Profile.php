@@ -33,8 +33,9 @@ class Profile extends Model
         return $profiles = Profile::where('user_id' ,'<>' , Auth::id());
     }
 
-    public function scopeGender($query, $gender)
+    public function scopeGender($query, $gender, Request $request)
     {
+        $gender=$request->gender;
         return $profiles = Profile::Where('gender',$gender);
     }
 
