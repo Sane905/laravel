@@ -56,5 +56,10 @@ class Profile extends Model
         });
     }
 
+    public function scopePlace($query, $str)
+    {
+        return $profiles = Profile::Where('place',$place);
+    }
+
 
 }
