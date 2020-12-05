@@ -38,5 +38,10 @@ class Profile extends Model
         return $profiles = Profile::Where('gender',$str);
     }
 
+    public function scopeMusic($query, $str)
+    {
+        return $profiles = Profile::Where('music','LIKE',"%{$str}%");
+    }
+
 
 }

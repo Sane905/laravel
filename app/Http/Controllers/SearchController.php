@@ -97,8 +97,8 @@ class SearchController extends Controller
             
             $profiles = Profile::gender($gender)->paginate(6);
         }elseif($request->has('music')&&$music!=('error')&&$age=('error')&&$place=('error')&&empty($gender)){
-            $query->Where('music','LIKE',"%{$music}%");
-            $profiles = $query->paginate(6);
+
+            $profiles = $query::music($music)->paginate(6);
         }else{
             $profiles = Profile::open()->paginate(6);
 
