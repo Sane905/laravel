@@ -28,7 +28,7 @@ class Profile extends Model
     }
 
     public function scopeOpen($query){
-        return $profiles = Profile::where('user_id' ,'=' , 6);
+        return $profiles = Profile::where('user_id' ,'=' , 5);
     }
 
 
