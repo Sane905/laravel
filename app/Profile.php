@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 use Auth;
 
 
@@ -32,7 +33,7 @@ class Profile extends Model
         return $profiles = Profile::where('user_id' ,'<>' , Auth::id());
     }
 
-    public function scopeKey($query)
+    public function scopeKey($query, Request $request)
     {
         $keyword = $request->keyword;
         return $query->Where('introduce','LIKE',"%{$keyword}%")
