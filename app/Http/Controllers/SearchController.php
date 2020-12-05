@@ -9,6 +9,7 @@ class SearchController extends Controller
 {
     public function index(Request $request)
     {
+        $profiles = Profile::open()->paginate(6);
         $place = $request->place;
         $age = $request->age;
         $keyword = $request->keyword;
@@ -18,9 +19,10 @@ class SearchController extends Controller
         
         $query = Profile::query()->where('user_id','<>',Auth::id());
 
-       if($place==('error')&&empty($keyword)&&$age==('error')&&empty($gender)&&$music==('error')){
-            $profiles = Profile::where('user_id','<>',Auth::id())->paginate(6);
-       }elseif($request->has('keyword')){
+      
+            
+        
+            if($request->has('keyword')){
             $query->Where('introduce','LIKE',"%{$keyword}%")
             ->orWhere('artist','LIKE',"%{$keyword}%")
             ->orWhere('gender','LIKE',"%{$keyword}%")
