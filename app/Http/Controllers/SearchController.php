@@ -21,16 +21,8 @@ class SearchController extends Controller
        if($place==('error')&&empty($keyword)&&$age==('error')&&empty($gender)&&$music==('error')){
             $profiles = Profile::open()->paginate(6);
        }elseif($request->has('keyword')){
-            $query->Where('introduce','LIKE',"%{$keyword}%")
-            ->orWhere('artist','LIKE',"%{$keyword}%")
-            ->orWhere('gender','LIKE',"%{$keyword}%")
-            ->orWhere('age','LIKE',"%{$keyword}%")
-            ->orWhere('place','LIKE',"%{$keyword}%")
-            ->orWhere('music','LIKE',"%{$keyword}%")
-            ->orWhereHas('user',function($query)use($keyword){
-                $query->where('name',$keyword);
-            });
-            $profiles = $query->paginate(6);
+            
+            $profiles = Profile::keyword($keyword)->paginate(6);
         }elseif($request->has('age')&&$age!=('error')&&$request->has('place')&&$place!=('error')&&$request->has('gender')&&$request->has('music')&&$music!=('error')){
         $query->Where('age',$age)
         ->Where('place',$place)

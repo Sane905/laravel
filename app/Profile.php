@@ -43,5 +43,18 @@ class Profile extends Model
         return $profiles = Profile::Where('music','LIKE',"%{$str}%");
     }
 
+    public function scopeKeyword($query, $str)
+    {
+        return $profiles = Profile::Where('introduce','LIKE',"%{$str}%")
+        ->orWhere('artist','LIKE',"%{$str}%")
+        ->orWhere('gender','LIKE',"%{$str}%")
+        ->orWhere('age','LIKE',"%{$str}%")
+        ->orWhere('place','LIKE',"%{$str}%")
+        ->orWhere('music','LIKE',"%{$str}%")
+        ->orWhereHas('user',function($query)use($str){
+            $query->where('name',$str);
+        });
+    }
+
 
 }
