@@ -19,7 +19,7 @@
 <div class="card mt-5">
   <p class="card-header text-center">絞り込み</p>
   <div class="card-body">
-    <form action="{{action('SearchController@show')}}" method="GET" enctype="multipart/form-data">
+    <form action="{{action('SearchController@index')}}" method="GET" enctype="multipart/form-data">
       @csrf
 
       <div class="form-group">
@@ -151,7 +151,7 @@
     
     <form class="band-form">
 　　<div class="input-group">
-      <form action="{{action('SearchController@show')}}" method="GET" enctype="multipart/form-data">
+      <form action="{{action('SearchController@index')}}" method="GET" enctype="multipart/form-data">
         @csrf
         <input type="text" class="form-control" name="keyword" value="{{ $keyword }}" placeholder="キーワードで検索" aria-label="" aria-describedby="basic-addon1">
         <div class="input-group-append">
@@ -200,7 +200,7 @@
       
     </div>
 
-     <div class="paginate mt-5 d-flex justify-content-center">
+    <div class="paginate mt-5 d-flex justify-content-center">
         {{ $profiles->appends(Request::only('keyword','gender','age','place','music'))->links() }}
     </div>
 
