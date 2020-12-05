@@ -28,10 +28,8 @@ class SearchController extends Controller
             ->orWhere('gender','LIKE',"%{$keyword}%")
             ->orWhere('age','LIKE',"%{$keyword}%")
             ->orWhere('place','LIKE',"%{$keyword}%")
-            ->orWhere('music','LIKE',"%{$keyword}%")
-            ->orWhereHas('user',function($query)use($keyword){
-                $query->where('name',$keyword);
-            });
+            ->orWhere('music','LIKE',"%{$keyword}%");
+            
             $profiles = $query->paginate(6);
         }elseif($request->has('age')&&$age!=('error')&&$request->has('place')&&$place!=('error')&&$request->has('gender')&&$request->has('music')&&$music!=('error')){
         $query->Where('age',$age)
