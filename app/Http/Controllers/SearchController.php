@@ -19,7 +19,7 @@ class SearchController extends Controller
         $query = Profile::query()->where('user_id','<>',Auth::id());
 
        if($place==('error')&&empty($keyword)&&$age==('error')&&empty($gender)&&$music==('error')){
-            $profiles = Profile::where('user_id','<>',Auth::id())->paginate(6);
+            $profiles = Profile::open()->paginate(6);
        }elseif($request->has('keyword')){
             $query->Where('introduce','LIKE',"%{$keyword}%")
             ->orWhere('artist','LIKE',"%{$keyword}%")
@@ -100,7 +100,7 @@ class SearchController extends Controller
             $query->Where('music','LIKE',"%{$music}%");
             $profiles = $query->paginate(6);
         }else{
-            $profiles = Profile::where('user_id' ,'<>' , Auth::id())->paginate(6);
+            $profiles = Profile::open()->paginate(6);
 
         }
         
