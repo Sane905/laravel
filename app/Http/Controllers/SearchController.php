@@ -21,7 +21,7 @@ class SearchController extends Controller
             $profiles = Profile::open()->paginate(6);
        }elseif($request->has('keyword')){
             
-            $query=Profile::keyword();
+            $query = Profile::keyword();
             $profiles = $query->paginate(6);
         }elseif($request->has('age')&&$age!=('error')&&$request->has('place')&&$place!=('error')&&$request->has('gender')&&$request->has('music')&&$music!=('error')){
         $query->Where('age',$age)
