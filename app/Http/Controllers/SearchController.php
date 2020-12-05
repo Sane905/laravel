@@ -30,8 +30,7 @@ class SearchController extends Controller
             });
             $profiles = $query;
         }else{
-                $query->all();
-                $profiles = $query->get();
+                $profiles = Profile::all();
         }
         return view('band.index')->with(['keyword'=>$keyword,'profiles'=>$profiles]);
 
