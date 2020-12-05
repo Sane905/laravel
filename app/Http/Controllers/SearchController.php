@@ -98,7 +98,7 @@ class SearchController extends Controller
             $query->Where('music','LIKE',"%{$music}%");
             $profiles = $query->paginate(0);
         }else{
-            $profiles = Profile::all()->paginate(0);
+            $profiles = Profile::all();
 
         }
         

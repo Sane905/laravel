@@ -200,6 +200,9 @@
       
     </div>
 
+     <div class="paginate mt-5 d-flex justify-content-center">
+                {{ $profiles->appends(Request::only('keyword','gender','age','place','music'))->links() }}
+            </div>
 
 @else
 <div class="card mt-4">
