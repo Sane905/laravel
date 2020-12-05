@@ -33,7 +33,7 @@ class Profile extends Model
         return $profiles = Profile::where('user_id' ,'<>' , Auth::id());
     }
 
-    public function scopeKey($query, Request $request)
+    public function scopeKey($query,Request $request)
     {
         $keyword = $request->keyword;
         return $query->Where('introduce','LIKE',"%{$keyword}%")
