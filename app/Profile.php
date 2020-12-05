@@ -27,8 +27,22 @@ class Profile extends Model
         return $this->belongsToMany('App\User')->withTimestamps();
     }
 
-    public function scopeOpen($query){
+    public function scopeOpen($query)
+    {
         return $profiles = Profile::where('user_id' ,'<>' , Auth::id());
+    }
+
+    public function scopeKeyword($query)
+    {
+        return $query->Where('introduce','LIKE',"%{$keyword}%")
+        ->orWhere('artist','LIKE',"%{$keyword}%")
+        ->orWhere('gender','LIKE',"%{$keyword}%")
+        ->orWhere('age','LIKE',"%{$keyword}%")
+        ->orWhere('place','LIKE',"%{$keyword}%")
+        ->orWhere('music','LIKE',"%{$keyword}%")
+        ->orWhereHas('user',function($query)use($keyword){
+            $query->where('name',$keyword);
+        });
     }
 
 
