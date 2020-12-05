@@ -35,7 +35,7 @@ class Profile extends Model
 
     public function scopeGender($query, $gender)
     {
-        return $query->Where('gender',$gender);
+        return $profiles = Profile::Where('gender',$gender);
     }
 
 
