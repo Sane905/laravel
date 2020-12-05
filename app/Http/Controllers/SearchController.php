@@ -9,7 +9,7 @@ class SearchController extends Controller
 {
     public function index(Request $request)
     {
-        $profiles = Profile::all();
+        $profiles = Profile::all()->get();
         $place = $request->place;
         $age = $request->age;
         $keyword = $request->keyword;
