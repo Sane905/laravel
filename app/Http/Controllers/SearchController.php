@@ -9,7 +9,7 @@ class SearchController extends Controller
 {
     public function index(Request $request)
     {
-        $profiles = Profile::open()->paginate(6);
+        $profiles = Profile::all();
         $place = $request->place;
         $age = $request->age;
         $keyword = $request->keyword;
@@ -17,12 +17,9 @@ class SearchController extends Controller
         $music = $request->music;
 
         
-        $query = Profile::query()->where('user_id','<>',Auth::id());
+        $query = Profile::query();
 
-      
-            
-        
-            if($request->has('keyword')){
+      if($request->has('keyword')){
             $query->Where('introduce','LIKE',"%{$keyword}%")
             ->orWhere('artist','LIKE',"%{$keyword}%")
             ->orWhere('gender','LIKE',"%{$keyword}%")
@@ -101,8 +98,7 @@ class SearchController extends Controller
         }elseif($request->has('music')&&$music!=('error')&&$age=('error')&&$place=('error')&&empty($gender)){
             $query->Where('music','LIKE',"%{$music}%");
             $profiles = $query->paginate(6);
-        };
-        
+        }
         return view('band.index')->with(['keyword'=>$keyword,'profiles'=>$profiles]);
 
     }

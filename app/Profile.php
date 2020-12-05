@@ -31,7 +31,5 @@ class Profile extends Model
         return $profiles = Profile::where('user_id' ,'<>' , Auth::id());
     }
 
-   
-
 
 }
