@@ -8,6 +8,7 @@
   @elseif(empty($keyword))
    <h2>全てのオト仲間を探す</h2>
    @endif
+  <h4 class="ml-5">{{$profiles->total()}}件取得</h4>
    </div>
   
   <div class="row">
@@ -199,7 +200,9 @@
       
     </div>
 
-    
+     <div class="paginate mt-5 d-flex justify-content-center">
+                {{ $profiles->appends(Request::only('keyword','gender','age','place','music'))->links() }}
+            </div>
 
 @else
 <div class="card mt-4">
