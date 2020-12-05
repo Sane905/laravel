@@ -62,9 +62,9 @@ Route::get('ajax/mypage/{id}/hasfavorites','FavoriteController@hasfavorite');
 
 Route::post('band/{id}','CommentController@store');
 
+Route::get('message','MessageController@index');
 
 Route::group(['middleware' => 'auth'], function() {
-    Route::get('message','MessageController@index');
     Route::get('ajax/message','Ajax\MessageController@index');
     Route::post('ajax/message','Ajax\MessageController@create');
 
