@@ -16,12 +16,20 @@ class SearchController extends Controller
         $music = $request->music;
 
         
+        $query = Profile::query()->where('user_id','<>',Auth::id());
 
        if($place==('error')&&empty($keyword)&&$age==('error')&&empty($gender)&&$music==('error')){
-            $profiles = Profile::open()->paginate(6);
+            $profiles = Profile::where('user_id','<>',Auth::id())->paginate(6);
        }elseif($request->has('keyword')){
-            
-            $query = Profile::key();
+            $query->Where('introduce','LIKE',"%{$keyword}%")
+            ->orWhere('artist','LIKE',"%{$keyword}%")
+            ->orWhere('gender','LIKE',"%{$keyword}%")
+            ->orWhere('age','LIKE',"%{$keyword}%")
+            ->orWhere('place','LIKE',"%{$keyword}%")
+            ->orWhere('music','LIKE',"%{$keyword}%")
+            ->orWhereHas('user',function($query)use($keyword){
+                $query->where('name',$keyword);
+            });
             $profiles = $query->paginate(6);
         }elseif($request->has('age')&&$age!=('error')&&$request->has('place')&&$place!=('error')&&$request->has('gender')&&$request->has('music')&&$music!=('error')){
         $query->Where('age',$age)
@@ -29,7 +37,7 @@ class SearchController extends Controller
         ->Where('music','LIKE',"%{$music}%")
         ->Where('gender',$gender);
 
-        $profiles = $query->paginate(6);
+        $profiles = $query->where('user_id' ,'<>' , Auth::id())->paginate(6);
         }elseif($request->has('age')&&$age!=('error')&&$request->has('place')&&$place!=('error')&&$request->has('gender')){
             $query->Where('age',$age)
                     ->Where('place',$place)
@@ -92,7 +100,7 @@ class SearchController extends Controller
             $query->Where('music','LIKE',"%{$music}%");
             $profiles = $query->paginate(6);
         }else{
-            $profiles = Profile::open()->paginate(6);
+            $profiles = Profile::where('user_id' ,'<>' , Auth::id())->paginate(6);
 
         }
         
