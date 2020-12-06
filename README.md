@@ -4,7 +4,7 @@
 
 __音楽好きで同じ音楽の趣味を持つ人が繋がれるマッチングアプリです。__
 
-__URL::__ <https://otolabo.net/>
+__URL::__ <https://otolabo.net/>(AWS) <https://music-web-service.herokuapp.com/>(Heroku)
 
 ## アプリ概要
 
