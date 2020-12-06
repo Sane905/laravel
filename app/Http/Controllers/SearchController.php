@@ -62,7 +62,7 @@ class SearchController extends Controller
 
             $profiles = Profile::music($music)->paginate(0);
         }else{
-            $profiles = Profile::open()->paginate(0);
+            $profiles = Profile::open();
 
         }
         
