@@ -175,7 +175,9 @@
             性別:{{$profile->gender}}
           </p>
       
-          
+          <p class="card-text">
+            {{\Illuminate\Support\Str::limit($profile->introduce, 20)}}
+          </p>
         </a>
 
         @if ($profile->comment->count())
