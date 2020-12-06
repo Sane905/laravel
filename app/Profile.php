@@ -28,11 +28,6 @@ class Profile extends Model
         return $this->belongsToMany('App\User')->withTimestamps();
     }
 
-    public function scopeAllget($query)
-    {
-        return $all = Profile::all();
-    }
-
     public function scopeOpen($query)
     {
         return $profiles = Profile::paginate(4);
