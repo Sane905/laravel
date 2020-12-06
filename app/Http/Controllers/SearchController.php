@@ -16,7 +16,6 @@ class SearchController extends Controller
         $music = $request->music;
 
         
-        $query = Profile::query()->where('user_id','<>',Auth::id());
 
         if($request->has('keyword')){
             $profiles = Profile::keyword($keyword)->paginate(6);
