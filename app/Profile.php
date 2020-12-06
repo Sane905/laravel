@@ -96,5 +96,11 @@ class Profile extends Model
         ->Where('music',$ttr);
     }
 
+    public function scopePlacemusic($query, $str, $ttr)
+    {
+        return $profiles = Profile::Where('place',$str)
+        ->Where('music',$ttr);
+    }
+
 
 }
