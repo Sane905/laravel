@@ -52,7 +52,7 @@
                             @endif
                         @else
                         <li class="nav-item d-none">
-                        <a class="nav-link" href="{{route('band.index')}}"><span class="fas fa-search mr-2"></span>オト仲間を探す</a>
+                        <a class="nav-link" href="{{action('SearchController@index')}}"><span class="fas fa-search mr-2"></span>オト仲間を探す</a>
                         </li>
                             <li class="nav-item dropdown d-flex d-none">
 
