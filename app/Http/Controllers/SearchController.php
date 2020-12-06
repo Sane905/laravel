@@ -16,8 +16,9 @@ class SearchController extends Controller
         $music = $request->music;
 
         
-
-        if($request->has('keyword')){
+        if($place==('error')&&empty($keyword)&&$age==('error')&&empty($gender)&&$music==('error')){
+            $profiles = Profile::open()->paginate(6);
+        }elseif($request->has('keyword')){
             $profiles = Profile::keyword($keyword)->paginate(6);
         }elseif($request->has('age')&&$age!=('error')&&$request->has('place')&&$place!=('error')&&$request->has('gender')&&$request->has('music')&&$music!=('error')){
 
