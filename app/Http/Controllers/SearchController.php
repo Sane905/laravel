@@ -64,7 +64,7 @@ class SearchController extends Controller
         }else{
             $profiles = Profile::open();
 
-        }
+        };
         
         return view('band.index')->with(['keyword'=>$keyword,'profiles'=>$profiles]);
 
