@@ -32,12 +32,12 @@ class SearchController extends Controller
             $profiles = Profile::placemusicage($place,$music,$age)->paginate(6);
         }elseif($request->has('music')&&$music!=('error')&&$request->has('place')&&$place!=('error')&&$age=('error')&&$request->has('gender')){
             $profiles = Profile::placemusicgender($place,$music,$gender)->paginate(6);
-        }elseif($request->has('age')&&$age!=('error')&&$request->has('music')&&$music!=('error')&&$place=('error')&&empty($gender)){
-            
-            $profiles = Profile::agemusic($age,$music)->paginate(6);
         }elseif($request->has('place')&&$place!=('error')&&$request->has('music')&&$music!=('error')&&empty($gender)&&$age=('error')){
             /**バグ */
             $profiles = Profile::placemusic($place,$music)->paginate(6);
+        }elseif($request->has('age')&&$age!=('error')&&$request->has('music')&&$music!=('error')&&$place=('error')&&empty($gender)){
+            
+            $profiles = Profile::agemusic($age,$music)->paginate(6);
         }elseif($request->has('gender')&&$request->has('music')&&$music!=('error')&&$place=('error')&&$age=('error')){
                 
                 $profiles = Profile::gendermusic($gender,$music)->paginate(6);
