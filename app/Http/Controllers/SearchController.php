@@ -17,12 +17,6 @@ class SearchController extends Controller
 
         $profiles = Profile::open();
 
-        if($request->has('keyword')){
-            $profiles = Profile::keyword($keyword);
-        }else{
-            $profiles = Profile::open();
-
-        }
         
         return view('band.index')->with(['keyword'=>$keyword,'profiles'=>$profiles]);
 
