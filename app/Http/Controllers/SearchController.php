@@ -42,10 +42,7 @@ class SearchController extends Controller
             ->Where('gender',$gender);
             $profiles = $query->paginate(6);
         }elseif($request->has('music')&&$music!=('error')&&$request->has('place')&&$place!=('error')&&$age=('error')&&$request->has('gender')){
-            $query->Where('place',$place)
-            ->Where('music','LIKE',"%{$music}%")
-            ->Where('gender',$gender);
-            $profiles = $query->paginate(6);
+            $profiles = Profile::placemusicgender($place,$music,$gender)->paginate(6);
         }elseif($request->has('music')&&$music!=('error')&&$request->has('place')&&$place!=('error')&&$request->has('age')&&$age!=('error')&&empty($gender)){
             $profiles = Profile::placemusicage($place,$music,$age)->paginate(6);
         }elseif($request->has('music')&&$music!=('error')&&$request->has('place')&&$place!=('error')&&empty($gender)&&$age=('error')){
