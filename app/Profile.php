@@ -30,7 +30,7 @@ class Profile extends Model
 
     public function scopeOpen($query)
     {
-        return $profiles = Profile::paginate(4);
+        return $profiles = Profile::where('user_id','<>',Auth::id())->paginate(4);
     }
 
     public function scopeGender($query, $str)
