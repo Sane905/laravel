@@ -33,7 +33,7 @@ Route::get('mypage/profile','MypageController@ProfileEdit');
 Route::post('mypage/profile', 'MypageController@ProfileUpdate');
 Route::get('mypage/member', 'MypageController@show');
 
-Route::get('band','SearchController@index')->name('band.index');
+Route::get('band','SearchController@index');
 Route::group(['middleware' => 'auth'], function(){
     Route::get('band/{id}','BandController@show');   
     Route::get('band/ajax/{id}/favorites','FavoriteController@store');
