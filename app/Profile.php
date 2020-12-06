@@ -35,12 +35,12 @@ class Profile extends Model
 
     public function scopeGender($query, $str)
     {
-        return $profiles = Profile::where('gender',$str)->paginate(4);
+        return $profiles = Profile::where('gender',$str)->where('user_id','<>',Auth::id())->paginate(4);
     }
 
     public function scopeMusic($query, $str)
     {
-        return $profiles = Profile::where('music','LIKE',"%{$str}%")->paginate(4);
+        return $profiles = Profile::where('music','LIKE',"%{$str}%")->where('user_id','<>',Auth::id())->paginate(4);
     }
 
     public function scopeKeyword($query, $str)
@@ -58,7 +58,7 @@ class Profile extends Model
 
     public function scopePlace($query, $str)
     {
-        return $profiles = Profile::where('place',$str)->paginate(4);
+        return $profiles = Profile::where('place',$str)->where('user_id','<>',Auth::id())->paginate(4);
     }
 
     public function scopeAge($query, $str)
