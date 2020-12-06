@@ -16,7 +16,7 @@ class SearchController extends Controller
         $music = $request->music;
 
         $profiles = Profile::open();
-        $all = Profile::allget();
+        $all = Profile::all();
 
         if($request->has('keyword')){
             $profiles = Profile::keyword($keyword);
