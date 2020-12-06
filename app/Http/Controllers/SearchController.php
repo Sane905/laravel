@@ -16,6 +16,7 @@ class SearchController extends Controller
         $music = $request->music;
 
         $profiles = Profile::open();
+        $all = Profile::allget();
 
         if($request->has('keyword')){
             $profiles = Profile::keyword($keyword);
@@ -66,7 +67,7 @@ class SearchController extends Controller
 
         }
         
-        return view('band.index')->with(['keyword'=>$keyword,'profiles'=>$profiles]);
+        return view('band.index')->with(['keyword'=>$keyword,'profiles'=>$profiles,'all'=>$all]);
 
     }
 }

@@ -8,7 +8,7 @@
   @elseif(empty($keyword))
    <h2>全てのオト仲間を探す</h2>
    @endif
-  <h4 class="ml-5">{{$profiles->total()}}件取得</h4>
+  <h4 class="ml-5">{{$all->total()}}件中{{$profiles->total()}}件取得</h4>
    </div>
   
   <div class="row">
