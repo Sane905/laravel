@@ -34,14 +34,13 @@ Route::post('mypage/profile', 'MypageController@ProfileUpdate');
 Route::get('mypage/member', 'MypageController@show');
 
 Route::get('band','SearchController@index')->name('band.index');
-Route::group(['middleware' => 'auth'], function() {
+
     Route::get('band/{id}','BandController@show');   
     Route::get('band/ajax/{id}/favorites','FavoriteController@store');
     Route::get('band/ajax/{id}/unfavorites','FavoriteController@destroy');
     Route::get('band/ajax/{id}/countfavorites','FavoriteController@count');
     Route::get('band/ajax/{id}/hasfavorites','FavoriteController@hasfavorite'); 
     
-});
 Route::get('ajax/band/{id}/favorites','FavoriteController@store');
 Route::get('ajax/band/{id}/unfavorites','FavoriteController@destroy');
 Route::get('ajax/band/{id}/countfavorites','FavoriteController@count');
