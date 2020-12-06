@@ -118,7 +118,7 @@ class Profile extends Model
 
     public function scopePlacemusicgender($query, $str, $ttr, $rtr)
     {
-        return $profiles = Profile::>Where('place',$str)
+        return $profiles = Profile::Where('place',$str)
         ->Where('music',$ttr)
         ->Where('gender',$rtr);
     }
