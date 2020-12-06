@@ -105,7 +105,7 @@ class Profile extends Model
     public function scopePlacemusicage($query, $str, $ttr, $rtr)
     {
         return $profiles = Profile::Where('place',$str)
-        ->Where('music',$ttr)
+        ->Where('music','LIKE',"%{$ttr}%")
         ->Where('age',$rtr);
     }
 
