@@ -21,21 +21,12 @@ class SearchController extends Controller
        if($place==('error')&&empty($keyword)&&$age==('error')&&empty($gender)&&$music==('error')){
             $profiles = Profile::open()->paginate(6);
        }elseif($request->has('keyword')){
-            
             $profiles = Profile::keyword($keyword)->paginate(6);
         }elseif($request->has('age')&&$age!=('error')&&$request->has('place')&&$place!=('error')&&$request->has('gender')&&$request->has('music')&&$music!=('error')){
-        $query->Where('age',$age)
-        ->Where('place',$place)
-        ->Where('music','LIKE',"%{$music}%")
-        ->Where('gender',$gender);
 
-        $profiles = $query->paginate(6);
+        $profiles = Profile::ageplacemusicgender($age,$place,$music,$gender)->paginate(6);
         }elseif($request->has('age')&&$age!=('error')&&$request->has('place')&&$place!=('error')&&$request->has('gender')){
-
-                $profiles = Profile::ageplacegender($age,$place,$gender)->paginate(6);
-            
-
-            
+            $profiles = Profile::ageplacegender($age,$place,$gender)->paginate(6);
         }elseif($request->has('music')&&$music!=('error')&&$request->has('age')&&$age!=('error')&&$request->has('gender')&&$place=('error')){
             $profiles = Profile::agemusicgender($age,$music,$gender)->paginate(6);
         }elseif($request->has('music')&&$music!=('error')&&$request->has('place')&&$place!=('error')&&$age=('error')&&$request->has('gender')){

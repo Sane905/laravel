@@ -130,5 +130,12 @@ class Profile extends Model
         ->Where('gender',$rtr);
     }
 
+    public function scopeAgeplacemusicgender($query, $str, $ttr, $rtr, $vtr)
+    {
+        return $profiles = Profile::Where('age',$str)
+        ->Where('place',$ttr)
+        ->Where('music',$rtr)
+        ->Where('gender',$vtr);
+    }
 
 }
