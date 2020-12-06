@@ -53,7 +53,7 @@ class Profile extends Model
         ->orWhere('music','LIKE',"%{$str}%")
         ->orWhereHas('user',function($query)use($str){
             $query->where('name',$str);
-        });
+        })->get();
     }
 
     public function scopePlace($query, $str)
