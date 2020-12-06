@@ -18,7 +18,7 @@ class SearchController extends Controller
         $profiles = Profile::open();
 
         
-        return view('band.index')->with(['keyword'=>$keyword,'profiles'=>$profiles]);
+        return view('band.index')->with(['profiles'=>$profiles]);
 
     }
 }
