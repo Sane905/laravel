@@ -69,65 +69,65 @@ class Profile extends Model
     public function scopeGenderplace($query, $str, $ttr)
     {
         return $profiles = Profile::Where('gender',$str)
-        ->Where('place',$ttr);
+        ->Where('place',$ttr)->get();
     }
 
     public function scopeAgeplace($query, $str, $ttr)
     {
         return $profiles = Profile::Where('age',$str)
-        ->Where('place',$ttr);
+        ->Where('place',$ttr)->get();
     }
 
     public function scopeGenderage($query, $str, $ttr)
     {
         return $profiles = Profile::Where('gender',$str)
-        ->Where('age',$ttr);
+        ->Where('age',$ttr)->get();
     }
 
     public function scopeGendermusic($query, $str, $ttr)
     {
         return $profiles = Profile::Where('gender',$str)
-        ->Where('music','LIKE',"%{$ttr}%");
+        ->Where('music','LIKE',"%{$ttr}%")->get();
     }
 
     public function scopeAgemusic($query, $str, $ttr)
     {
         return $profiles = Profile::Where('age',$str)
-        ->Where('music','LIKE',"%{$ttr}%");
+        ->Where('music','LIKE',"%{$ttr}%")->get();
     }
 
     public function scopePlacemusic($query, $str, $ttr)
     {
         return $profiles = Profile::Where('place',$str)
-        ->Where('music','LIKE',"%{$ttr}%");
+        ->Where('music','LIKE',"%{$ttr}%")->get();
     }
 
     public function scopePlacemusicage($query, $str, $ttr, $rtr)
     {
         return $profiles = Profile::Where('place',$str)
         ->Where('music','LIKE',"%{$ttr}%")
-        ->Where('age',$rtr);
+        ->Where('age',$rtr)->get();
     }
 
     public function scopeAgeplacegender($query, $str, $ttr, $rtr)
     {
         return $profiles = Profile::Where('age',$str)
         ->Where('place',$ttr)
-        ->Where('gender',$rtr);
+        ->Where('gender',$rtr)->get();
     }
 
     public function scopePlacemusicgender($query, $str, $ttr, $rtr)
     {
         return $profiles = Profile::Where('place',$str)
         ->Where('music','LIKE',"%{$ttr}%")
-        ->Where('gender',$rtr);
+        ->Where('gender',$rtr)->get();
     }
 
     public function scopeAgemusicgender($query, $str, $ttr, $rtr)
     {
         return $profiles = Profile::Where('age',$str)
         ->Where('music','LIKE',"%{$ttr}%")
-        ->Where('gender',$rtr);
+        ->Where('gender',$rtr)->get();
     }
 
     public function scopeAgeplacemusicgender($query, $str, $ttr, $rtr, $vtr)
@@ -135,7 +135,7 @@ class Profile extends Model
         return $profiles = Profile::Where('age',$str)
         ->Where('place',$ttr)
         ->Where('music','LIKE',"%{$rtr}%")
-        ->Where('gender',$vtr);
+        ->Where('gender',$vtr)->get();
     }
 
 }
