@@ -53,7 +53,7 @@ class Profile extends Model
         ->orwhere('music','LIKE',"%{$str}%")
         ->orwhereHas('user',function($query)use($str){
             $query->where('name',$str);
-        })->paginate(4);
+        })->where('user_id','<>',Auth::id())->paginate(4);
     }
 
     public function scopePlace($query, $str)
