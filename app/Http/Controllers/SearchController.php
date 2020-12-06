@@ -16,54 +16,53 @@ class SearchController extends Controller
         $music = $request->music;
 
         
-        if($place==('error')&&empty($keyword)&&$age==('error')&&empty($gender)&&$music==('error')){
-            $profiles = Profile::open()->paginate(6);
-        }elseif($request->has('keyword')){
-            $profiles = Profile::keyword($keyword)->paginate(6);
+
+        if($request->has('keyword')){
+            $profiles = Profile::keyword($keyword)->paginate(0);
         }elseif($request->has('age')&&$age!=('error')&&$request->has('place')&&$place!=('error')&&$request->has('gender')&&$request->has('music')&&$music!=('error')){
 
-        $profiles = Profile::ageplacemusicgender($age,$place,$music,$gender)->paginate(6);
+        $profiles = Profile::ageplacemusicgender($age,$place,$music,$gender)->paginate(0);
         }elseif($request->has('age')&&$age!=('error')&&$request->has('place')&&$place!=('error')&&$request->has('gender')){
-            $profiles = Profile::ageplacegender($age,$place,$gender)->paginate(6);
+            $profiles = Profile::ageplacegender($age,$place,$gender)->paginate(0);
         }elseif($request->has('music')&&$music!=('error')&&$request->has('age')&&$age!=('error')&&$request->has('gender')&&$place=('error')){
-            $profiles = Profile::agemusicgender($age,$music,$gender)->paginate(6);
+            $profiles = Profile::agemusicgender($age,$music,$gender)->paginate(0);
         }elseif($request->has('music')&&$music!=('error')&&$request->has('place')&&$place!=('error')&&$request->has('age')&&$age!=('error')&&empty($gender)){
             /**バグ */
-            $profiles = Profile::placemusicage($place,$music,$age)->paginate(6);
+            $profiles = Profile::placemusicage($place,$music,$age)->paginate(0);
         }elseif($request->has('music')&&$music!=('error')&&$request->has('place')&&$place!=('error')&&$age=('error')&&$request->has('gender')){
-            $profiles = Profile::placemusicgender($place,$music,$gender)->paginate(6);
+            $profiles = Profile::placemusicgender($place,$music,$gender)->paginate(0);
         }elseif($request->has('place')&&$place!=('error')&&$request->has('music')&&$music!=('error')&&empty($gender)&&$age=('error')){
             /**バグ */
-            $profiles = Profile::placemusic($place,$music)->paginate(6);
+            $profiles = Profile::placemusic($place,$music)->paginate(0);
         }elseif($request->has('age')&&$age!=('error')&&$request->has('music')&&$music!=('error')&&$place=('error')&&empty($gender)){
             
-            $profiles = Profile::agemusic($age,$music)->paginate(6);
+            $profiles = Profile::agemusic($age,$music)->paginate(0);
         }elseif($request->has('gender')&&$request->has('music')&&$music!=('error')&&$place=('error')&&$age=('error')){
                 
-                $profiles = Profile::gendermusic($gender,$music)->paginate(6);
+                $profiles = Profile::gendermusic($gender,$music)->paginate(0);
         }elseif($request->has('age')&&$age!=('error')&&$request->has('gender')&&$place=('error')&&$music==('error')){
         
-                $profiles = Profile::genderage($gender,$age)->paginate(6);
+                $profiles = Profile::genderage($gender,$age)->paginate(0);
         }elseif($request->has('age')&&$age!=('error')&&$request->has('place')&&$place!=('error')&&empty($gender)&&$music==('error')){
 
-            $profiles = Profile::ageplace($age,$place)->paginate(6);
+            $profiles = Profile::ageplace($age,$place)->paginate(0);
         }elseif($request->has('place')&&$place!=('error')&&$request->has('gender')&&$age=('error')&&$music==('error')){
         
-            $profiles = Profile::genderplace($gender,$place)->paginate(6);
+            $profiles = Profile::genderplace($gender,$place)->paginate(0);
         }elseif($request->has('age')&&$age!=('error')&&empty($gender)&&$place=('error')&&$music==('error')){
         
-            $profiles = Profile::age($age)->paginate(6);
+            $profiles = Profile::age($age)->paginate(0);
         }elseif($request->has('place')&&$place!=('error')&&empty($gender)&&$age=('error')&&$music==('error')){
         
-            $profiles = Profile::place($place)->paginate(6);
+            $profiles = Profile::place($place)->paginate(0);
         }elseif($request->has('gender')&&$age=('error')&&$place=('error')&&$music==('error')){
             
-            $profiles = Profile::gender($gender)->paginate(6);
+            $profiles = Profile::gender($gender)->paginate(0);
         }elseif($request->has('music')&&$music!=('error')&&$age=('error')&&$place=('error')&&empty($gender)){
 
-            $profiles = Profile::music($music)->paginate(6);
+            $profiles = Profile::music($music)->paginate(0);
         }else{
-            $profiles = Profile::open()->paginate(6);
+            $profiles = Profile::open()->paginate(0);
 
         }
         
