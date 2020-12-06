@@ -72,5 +72,11 @@ class Profile extends Model
         ->Where('place',$ttr);
     }
 
+    public function scopeAgeplace($query, $str, $ttr)
+    {
+        return $profiles = Profile::Where('age',$str)
+        ->Where('place',$ttr);
+    }
+
 
 }
