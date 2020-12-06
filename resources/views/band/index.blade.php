@@ -12,7 +12,6 @@
   
   <div class="row">
   <div class="col-lg-3">
-      <!-- Content -->
 
 
 <div class="card mt-5">
@@ -146,7 +145,6 @@
     
     </div>
     <div class="col-lg-8 pt-2">
-      <!-- Content -->
     
     <form class="band-form">
 　　<div class="input-group">
