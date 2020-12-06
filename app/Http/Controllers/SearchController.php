@@ -61,6 +61,9 @@ class SearchController extends Controller
         }elseif($request->has('music')&&$music!=('error')&&$age=('error')&&$place=('error')&&empty($gender)){
 
             $profiles = Profile::music($music);
+        }else{
+            $profiles = Profile::open();
+
         };
         
         return view('band.index')->with(['keyword'=>$keyword,'profiles'=>$profiles]);
