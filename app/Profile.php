@@ -66,5 +66,11 @@ class Profile extends Model
         return $profiles = Profile::Where('age',$str);
     }
 
+    public function scopeGenderplace($query, $str, $ttr)
+    {
+        return $profiles = Profile::Where('gender',$str)
+        ->Where('place',$ttr);
+    }
+
 
 }

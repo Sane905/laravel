@@ -76,9 +76,8 @@ class SearchController extends Controller
 
             $profiles = $query->paginate(6);
         }elseif($request->has('place')&&$place!=('error')&&$request->has('gender')&&$age=('error')&&$music==('error')){
-            $query->Where('gender',$gender)
-            ->Where('place',$place);
-            $profiles = $query->paginate(6);
+        
+            $profiles = Profile::genderplace($gender,$place)->paginate(6);
         }elseif($request->has('age')&&$age!=('error')&&empty($gender)&&$place=('error')&&$music==('error')){
         
             $profiles = Profile::age($age)->paginate(6);
