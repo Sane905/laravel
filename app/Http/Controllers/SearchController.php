@@ -70,7 +70,7 @@ class SearchController extends Controller
         {
             if($profile->user_id!=Auth::id())
             {
-                $results = $profiles;
+                $results = $profiles->where('user_id','<>',Auth::id());
             }
 
         }
