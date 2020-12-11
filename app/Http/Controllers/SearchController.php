@@ -65,8 +65,17 @@ class SearchController extends Controller
             $profiles = Profile::open();
 
         }
+
+        foreach($profiles as $profile)
+        {
+            if($profile->user_id!=Auth::id())
+            {
+                $results = $profiles
+            }
+
+        }
         
-        return view('band.index')->with(['keyword'=>$keyword,'profiles'=>$profiles]);
+        return view('band.index')->with(['keyword'=>$keyword,'profiles'=>$profiles, 'profiles'=>$results]);
 
     }
 }
