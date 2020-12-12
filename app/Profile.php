@@ -35,7 +35,7 @@ class Profile extends Model
 
     public function scopeGender($query, $str)
     {
-        return $profiles = Profile::where('gender',$str)->where('user_id','<>',Auth::id())->paginate(4);
+        return $profiles = Profile::where('gender',$str)->get();
     }
 
     public function scopeMusic($query, $str)
