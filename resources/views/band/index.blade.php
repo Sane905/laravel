@@ -159,7 +159,7 @@
      
     </div>
     </form>
-@if(!isset($profiles))
+@if(isset($profiles))
     <div class="d-flex flex-wrap list">
    
       @foreach($profiles as $profile)
