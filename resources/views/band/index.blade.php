@@ -159,7 +159,7 @@
      
     </div>
     </form>
-@if(!empty($profiles))
+@if($profiles->count())
     <div class="d-flex flex-wrap list">
    
       @foreach($profiles as $profile)
