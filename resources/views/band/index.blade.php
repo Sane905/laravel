@@ -159,7 +159,7 @@
      
     </div>
     </form>
-@if($profiles->count())
+
     <div class="d-flex flex-wrap list">
    
       @foreach($profiles as $profile)
@@ -199,13 +199,7 @@
     </div>
 
 
-@else
-<div class="card mt-4">
-  <div class="card-body">
-  指定した条件に当てはまるオト仲間がみつかりませんでした。検索条件を変えて再度お試しください。
-  </div>
-</div>
-@endif
+
       
     </div>
 
