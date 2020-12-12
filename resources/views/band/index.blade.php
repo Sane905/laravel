@@ -159,52 +159,54 @@
      
     </div>
     </form>
-@if(isset($profiles))
-    <div class="d-flex flex-wrap list">
-   
-      @foreach($profiles as $profile)
-      <div class="card mt-5">
-        <a href="band/{{$profile->id}}">
-
-        <img class="card-img-top" src="{{$profile->image}}" height=240 alt="Card image cap">
-        <div class="card-body">
-          <h4 class="card-title text-center">{{$profile->user->name}}</h4>
-          <p class="card-text">
-            年齢:{{$profile->age}}
-          </p>
-          <p class="card-text">
-            性別:{{$profile->gender}}
-          </p>
-      
-          <p class="card-text">
-            {{\Illuminate\Support\Str::limit($profile->introduce, 20)}}
-          </p>
-        </a>
-
-        @if ($profile->comment->count())
-            <span class="badge badge-pill badge-primary">
-                コメント {{ $profile->comment->count() }}件
-            </span>
-        @endif
-        <favorite-component
-        :profile="{{ json_encode($profile)}}"
-        ></favorite-component>
-      
-
-        </div>
-      </div>
-      @endforeach
-
-      
-    </div>
-
-
-@else
+@if($profiles->isEmpty())
 <div class="card mt-4">
   <div class="card-body">
   指定した条件に当てはまるオト仲間がみつかりませんでした。検索条件を変えて再度お試しください。
   </div>
+  
 </div>
+@else
+
+<div class="d-flex flex-wrap list">
+   
+   @foreach($profiles as $profile)
+   <div class="card mt-5">
+     <a href="band/{{$profile->id}}">
+
+     <img class="card-img-top" src="{{$profile->image}}" height=240 alt="Card image cap">
+     <div class="card-body">
+       <h4 class="card-title text-center">{{$profile->user->name}}</h4>
+       <p class="card-text">
+         年齢:{{$profile->age}}
+       </p>
+       <p class="card-text">
+         性別:{{$profile->gender}}
+       </p>
+   
+       <p class="card-text">
+         {{\Illuminate\Support\Str::limit($profile->introduce, 20)}}
+       </p>
+     </a>
+
+     @if ($profile->comment->count())
+         <span class="badge badge-pill badge-primary">
+             コメント {{ $profile->comment->count() }}件
+         </span>
+     @endif
+     <favorite-component
+     :profile="{{ json_encode($profile)}}"
+     ></favorite-component>
+   
+
+     </div>
+   </div>
+   @endforeach
+
+   
+ </div>
+
+
 @endif
       
     </div>
