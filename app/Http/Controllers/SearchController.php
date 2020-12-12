@@ -75,7 +75,7 @@ class SearchController extends Controller
 
         }
         
-        return view('band.index')->with(['keyword'=>$keyword,'profiles'=>$results[]]);
+        return view('band.index')->with(['keyword'=>$keyword,'profiles'=>$results]);
 
     }
 }
