@@ -63,7 +63,7 @@ class SearchController extends Controller
 
             $profiles = Profile::music($music);
         }else{
-            $profiles = Profile::open();
+            $profiles = [];
 
         }
 
