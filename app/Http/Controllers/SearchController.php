@@ -15,6 +15,7 @@ class SearchController extends Controller
         $gender = $request->gender;
         $music = $request->music;
 
+        $results = [];
         $profiles = Profile::open();
 
         if($request->has('keyword')){
