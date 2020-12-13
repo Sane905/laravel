@@ -66,6 +66,10 @@ class SearchController extends Controller
 
         }
 
+        if(empty($profiles)){
+            $results = $profiles;
+        }
+
         foreach($profiles as $profile)
         {
             if($profile->user_id!=Auth::id())
@@ -76,9 +80,7 @@ class SearchController extends Controller
         }
 
         
-        if(empty($profiles)){
-            $results[] = $profile;
-        }
+        
         
         return view('band.index')->with(['keyword'=>$keyword,'profiles'=>$results]);
 
