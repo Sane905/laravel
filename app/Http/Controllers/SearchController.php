@@ -76,7 +76,7 @@ class SearchController extends Controller
         }
 
         
-        if(empty($profile)){
+        if(empty($profiles)){
             $results[] = $profile;
         }
         
