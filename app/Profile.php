@@ -40,7 +40,7 @@ class Profile extends Model
 
     public function scopeMusic($query, $str)
     {
-        return $profiles = Profile::where('music','LIKE',"%{$str}%")->where('user_id','<>',Auth::id())->paginate(4);
+        return $profiles = Profile::where('music','LIKE',"%{$str}%")->get();
     }
 
     public function scopeKeyword($query, $str)
@@ -53,81 +53,81 @@ class Profile extends Model
         ->orwhere('music','LIKE',"%{$str}%")
         ->orwhereHas('user',function($query)use($str){
             $query->where('name',$str);
-        })->where('user_id','<>',Auth::id())->paginate(4);
+        })->get();
     }
 
     public function scopePlace($query, $str)
     {
-        return $profiles = Profile::where('place',$str)->where('user_id','<>',Auth::id())->paginate(4);
+        return $profiles = Profile::where('place',$str)->get();
     }
 
     public function scopeAge($query, $str)
     {
-        return $profiles = Profile::where('age',$str)->where('user_id','<>',Auth::id())->paginate(4);
+        return $profiles = Profile::where('age',$str)->get();
     }
 
     public function scopeGenderplace($query, $str, $ttr)
     {
         return $profiles = Profile::where('gender',$str)
-        ->where('place',$ttr)->where('user_id','<>',Auth::id())->paginate(4);
+        ->where('place',$ttr)->get();
     }
 
     public function scopeAgeplace($query, $str, $ttr)
     {
         return $profiles = Profile::where('age',$str)
-        ->where('place',$ttr)->where('user_id','<>',Auth::id())->paginate(4);
+        ->where('place',$ttr)->get();
     }
 
     public function scopeGenderage($query, $str, $ttr)
     {
         return $profiles = Profile::where('gender',$str)
-        ->where('age',$ttr)->where('user_id','<>',Auth::id())->paginate(4);
+        ->where('age',$ttr)->get();
     }
 
     public function scopeGendermusic($query, $str, $ttr)
     {
         return $profiles = Profile::where('gender',$str)
-        ->where('music','LIKE',"%{$ttr}%")->where('user_id','<>',Auth::id())->paginate(4);
+        ->where('music','LIKE',"%{$ttr}%")->get();
     }
 
     public function scopeAgemusic($query, $str, $ttr)
     {
         return $profiles = Profile::where('age',$str)
-        ->where('music','LIKE',"%{$ttr}%")->where('user_id','<>',Auth::id())->paginate(4);
+        ->where('music','LIKE',"%{$ttr}%")->get();
     }
 
     public function scopePlacemusic($query, $str, $ttr)
     {
         return $profiles = Profile::where('place',$str)
-        ->where('music','LIKE',"%{$ttr}%")->where('user_id','<>',Auth::id())->paginate(4);
+        ->where('music','LIKE',"%{$ttr}%")->get();
     }
 
     public function scopePlacemusicage($query, $str, $ttr, $rtr)
     {
         return $profiles = Profile::where('place',$str)
         ->where('music','LIKE',"%{$ttr}%")
-        ->where('age',$rtr)->where('user_id','<>',Auth::id())->paginate(4);
+        ->where('age',$rtr)->get();
     }
 
     public function scopeAgeplacegender($query, $str, $ttr, $rtr)
     {
         return $profiles = Profile::where('age',$str)
         ->where('place',$ttr)
-        ->where('gender',$rtr)->where('user_id','<>',Auth::id())->paginate(4);
+        ->where('gender',$rtr)->get();
     }
 
     public function scopePlacemusicgender($query, $str, $ttr, $rtr)
     {
         return $profiles = Profile::where('place',$str)
         ->where('music','LIKE',"%{$ttr}%")
-        ->where('gender',$rtr)->where('user_id','<>',Auth::id())->paginate(4);
+        ->where('gender',$rtr)->get();
     }
 
     public function scopeAgemusicgender($query, $str, $ttr, $rtr)
     {
         return $profiles = Profile::where('age',$str)
         ->where('music','LIKE',"%{$ttr}%")
-        ->where('gender',$rtr)->where('user_id','<>',Auth::id())->paginate(4);
+        ->where('gender',$rtr)->get();
     }
 
     public function scopeAgeplacemusicgender($query, $str, $ttr, $rtr, $vtr)
@@ -135,7 +135,7 @@ class Profile extends Model
         return $profiles = Profile::where('age',$str)
         ->where('place',$ttr)
         ->where('music','LIKE',"%{$rtr}%")
-        ->where('gender',$vtr)->where('user_id','<>',Auth::id())->paginate(4);
+        ->where('gender',$vtr)->get();
     }
 
 }
