@@ -73,10 +73,11 @@ class SearchController extends Controller
                 $results[] = $profile;
             }
 
-            if(empty($profile)){
-                $results[] = $profile;
-            }
+        }
 
+        
+        if(empty($profile)){
+            $results[] = $profile;
         }
         
         return view('band.index')->with(['keyword'=>$keyword,'profiles'=>$results]);
