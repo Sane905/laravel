@@ -77,7 +77,7 @@
    
     <div class="form-group mt-4">
       <label for="formGroupExampleInput">好きなアーティスト</label>
-      <input name="artist" type="text" class="form-control" id="formGroupExampleInput" placeholder="例　テイラースイフト RadWimps etc">
+      <input name="artist" type="text" class="form-control" id="formGroupExampleInput" placeholder="例　テイラースイフト RadWimps etc" value="{{ old('artist') }}">
       @error('artist')
   <span class="text-danger">{{ $message }}</span>
   @enderror
@@ -130,7 +130,7 @@
 
     <div class="form-group mt-4">
       <label for="formGroupExampleInput">あなたについて自由に書いてください。</label>
-      <textarea name="introduce" type="text" class="form-control" id="formGroupExampleInput" placeholder="140字以内で書いてください">
+      <textarea name="introduce" type="text" class="form-control" id="formGroupExampleInput" placeholder="140字以内で書いてください">{{ old('introduce')}}
       </textarea>
      @error('introduce')
   <span class="text-danger">{{ $message }}</span>
