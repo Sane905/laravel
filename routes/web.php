@@ -25,7 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('profile','ProfileController',['only'=>['store','create']]);
 
-Route::resource('mypage','MypageController',['only'=>['index']]);
+Route::resource('mypage','MypageController',['only'=>['index','send']]);
 
 Route::get('mypage/edit','MypageController@edit');  
 Route::post('mypage/edit', 'MypageController@update');
