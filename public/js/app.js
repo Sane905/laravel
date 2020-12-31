@@ -2151,7 +2151,7 @@ __webpack_require__.r(__webpack_exports__);
     favorite: function favorite() {
       var _this = this;
 
-      axios.get('ajax/mypage/' + this.user.id + '/favorites').then(function (res) {
+      axios.get('ajax/favorite/' + this.user.id + '/favorites').then(function (res) {
         _this.count = res.data.count;
       })["catch"](function (error) {
         console.log(error.response);
@@ -2160,7 +2160,7 @@ __webpack_require__.r(__webpack_exports__);
     unfavorite: function unfavorite() {
       var _this2 = this;
 
-      axios.get('ajax/mypage/' + this.user.id + '/unfavorites').then(function (res) {
+      axios.get('ajax/favorite/' + this.user.id + '/unfavorites').then(function (res) {
         _this2.count = res.data.count;
       })["catch"](function (error) {
         console.log(error.response);
@@ -2169,7 +2169,7 @@ __webpack_require__.r(__webpack_exports__);
     countfavorites: function countfavorites() {
       var _this3 = this;
 
-      axios.get('ajax/mypage/' + this.user.id + '/countfavorites').then(function (res) {
+      axios.get('ajax/favorite/' + this.user.id + '/countfavorites').then(function (res) {
         _this3.count = res.data;
       })["catch"](function (error) {
         console.log(error.response);
@@ -2178,7 +2178,7 @@ __webpack_require__.r(__webpack_exports__);
     hasfavorites: function hasfavorites() {
       var _this4 = this;
 
-      axios.get('ajax/mypage/' + this.user.id + '/hasfavorites').then(function (res) {
+      axios.get('ajax/favorite/' + this.user.id + '/hasfavorites').then(function (res) {
         _this4.result = res.data;
       })["catch"](function (error) {
         console.log(error.response);

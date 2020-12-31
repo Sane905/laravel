@@ -31,7 +31,7 @@
         },
         methods:{
           favorite(){
-            axios.get('ajax/mypage/'+this.user.id+'/favorites')
+            axios.get('ajax/favorite/'+this.user.id+'/favorites')
             .then(res=>{
                 this.count=res.data.count;
             }).catch(function(error){
@@ -40,7 +40,7 @@
 
         },
         unfavorite(){
-          axios.get('ajax/mypage/'+this.user.id+'/unfavorites')
+          axios.get('ajax/favorite/'+this.user.id+'/unfavorites')
           .then(res=>{
               this.count=res.data.count;
           }).catch(function(error){
@@ -48,7 +48,7 @@
           });
         },
         countfavorites(){
-          axios.get('ajax/mypage/'+this.user.id+'/countfavorites')
+          axios.get('ajax/favorite/'+this.user.id+'/countfavorites')
           .then(res =>{
             this.count=res.data;
           }).catch(function(error){
@@ -56,7 +56,7 @@
           });
         },
         hasfavorites(){
-          axios.get('ajax/mypage/'+this.user.id+'/hasfavorites')
+          axios.get('ajax/favorite/'+this.user.id+'/hasfavorites')
           .then(res=>{
             this.result=res.data;
           }).catch(function(error){
