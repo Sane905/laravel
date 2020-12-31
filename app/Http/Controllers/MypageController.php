@@ -202,6 +202,21 @@ class MypageController extends Controller
         return view('mypage.good')->with(['users'=>$users,'goods'=>$goods]);
     }
 
+    public function follow()
+    {
+        $user = Auth::id();
+        $users = Profile::where('user_id',$user)->first();
+        $receives = $users->comment()->orderBy('created_at','desc')->paginate(5);
+        $favorite = User::find($user)->favorites();
+        $goods = User::find($user)->favorites()->orderBy('created_at','desc')->get();
+        $relative = $favorite->pluck('profiles.user_id')->toArray();
+        $follows = $users->users()->whereIn('users.id',$relative)->orderBy('created_at','desc')->get();
+
+        return view('mypage.follow')->with(['users'=>$users,'follows'=>$follows]);
+    }
+
+
+
 
 
 }

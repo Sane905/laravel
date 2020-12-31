@@ -47,7 +47,7 @@
             <a href="{{route('mypage.good')}}" class="nav-link">あなたが気にした人</a>
           </li>
           <li class="nav-item">
-            <a href="#follow" class="nav-link">相互気になる人</a>
+            <a href="{{route('mypage.follow')}}" class="nav-link">相互気になる人</a>
           </li>
         </ul>
 
