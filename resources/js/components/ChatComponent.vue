@@ -24,6 +24,7 @@
     <div class="card-body" v-for="m in messages">
       <div class="media">
        
+      
 
         <div class="media-body">
 
