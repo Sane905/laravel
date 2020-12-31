@@ -35,49 +35,25 @@
       <div id="app" class="card mt-4">
         <ul class="nav nav-tabs">
           <li class="nav-item w-33">
-            <a href="#receive" class="nav-link active" data-toggle="tab">コメント受信</a>
+            <a href="{{route('mypage.index')}}" class="nav-link">コメント受信</a>
           </li>
           <li class="nav-item">
-            <a href="#send" class="nav-link" data-toggle="tab">コメント送信</a>
+            <a href="{{route('mypage.send')}}" class="nav-link">コメント送信</a>
           </li>
           <li class="nav-item">
-            <a href="#favorite" class="nav-link" data-toggle="tab">あなたを気にしてる人</a>
+            <a href="#favorite" class="nav-link">あなたを気にしてる人</a>
           </li>
           <li class="nav-item">
-            <a href="#good" class="nav-link" data-toggle="tab">あなたが気にした人</a>
+            <a href="#good" class="nav-link">あなたが気にした人</a>
           </li>
           <li class="nav-item">
-            <a href="#follow" class="nav-link" data-toggle="tab">相互気になる人</a>
+            <a href="#follow" class="nav-link">相互気になる人</a>
           </li>
         </ul>
 
       <div class="tab-content">
-        <div id="receive" class="tab-pane active">
-        　  @forelse($receives as $comment)
-              <a href="band/{{$comment->user->profile->id}}">
-                <div class="border-top p-4">
-                    <div class="d-flex">
-                    <img class="mw-10 rounded-circle" src="{{$comment->user->profile->image}}" width=50 height=50>
-                      <p class="ml-3 mt-3">{{$comment->user->name}}</p>
-                      <time class="text-secondary ml-3 mt-3">
-                          {{ $comment->created_at->format('Y.m.d H:i') }}
-                      </time>
-                      
-                    </div>
-                    
-                    <p class="mt-2">
-                        {!! nl2br(e($comment->body)) !!}
-                    </p>
-                </div>
-              </a>
-            @empty
-                <p>コメントはまだありません。</p>
-            @endforelse
-              <div class="paginate mt-5 d-flex justify-content-center">
-              {{$receives->links()}}
-              </div>
-        </div>
-        <div id="send" class="tab-pane">
+        
+        <div id="send" class="tab-pane active">
         　  @forelse($sends as $send)
                   <a href="band/{{$send->profile->id}}">
                   <div class="border-top p-4">

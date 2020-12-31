@@ -35,19 +35,19 @@
       <div id="app" class="card mt-4">
         <ul class="nav nav-tabs">
           <li class="nav-item w-33">
-            <a href="#receive" class="nav-link active" data-toggle="tab">コメント受信</a>
+            <a href="{{route('mypage.index')}}" class="nav-link">コメント受信</a>
           </li>
           <li class="nav-item">
-            <a href="#send" class="nav-link" data-toggle="tab">コメント送信</a>
+            <a href="{{route('mypage.send')}}" class="nav-link">コメント送信</a>
           </li>
           <li class="nav-item">
-            <a href="#favorite" class="nav-link" data-toggle="tab">あなたを気にしてる人</a>
+            <a href="#favorite" class="nav-link">あなたを気にしてる人</a>
           </li>
           <li class="nav-item">
-            <a href="#good" class="nav-link" data-toggle="tab">あなたが気にした人</a>
+            <a href="#good" class="nav-link">あなたが気にした人</a>
           </li>
           <li class="nav-item">
-            <a href="#follow" class="nav-link" data-toggle="tab">相互気になる人</a>
+            <a href="#follow" class="nav-link">相互気になる人</a>
           </li>
         </ul>
 
