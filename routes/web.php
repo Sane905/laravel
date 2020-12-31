@@ -29,6 +29,8 @@ Route::resource('mypage','MypageController',['only'=>['index']]);
 Route::get('mypage/send','MypageController@send')->name('mypage.send');
 Route::get('mypage/favorite','MypageController@favorite')->name('mypage.favorite');
 Route::get('mypage/good','MypageController@good')->name('mypage.good');
+Route::get('mypage/follow','MypageController@follow')->name('mypage.follow');
+
 
 
 
