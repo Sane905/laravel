@@ -52,38 +52,34 @@
         </ul>
 
       <div class="tab-content">
-        
-        <div id="send" class="tab-pane active">
-        　  @forelse($sends as $send)
-                  <a href="../band/{{$send->profile->id}}">
+        <div id="good" class="tab-pane active">
+        　　 @forelse($goods as $good)
+                  <a href="../band/{{$good->id}}">
                   <div class="border-top p-4">
                       <div class="d-flex">
-                        <img class="mw-10 rounded-circle" src="{{$send->profile->image}}" width=50 height=50>
-                        <p class="ml-3 mt-3">{{$send->profile->user->name}}</p>
-                        <time class="text-secondary ml-3 mt-3">
-                            {{ $send->created_at->format('Y.m.d H:i') }}
-                        </time>
+                        <img class="mw-10 rounded-circle" src="{{$good->image}}" width=50 height=50>
+                        
+                        <div class="d-flex">
+                          <p class="ml-3">{{$good->user->name}}</p>
+                          <p class="mr-3 ml-3">{{$good->age}}</p>
+                          <p>{{$good->gender}}</p>
+
+                        </div>
+
                         
                       </div>
                       
-                      <p class="mt-2">
-                          {!! nl2br(e($send->body)) !!}
-                      </p>
                   </div>
+                  
+                  
                   </a>
                 
-            @empty
-                <p>コメントはまだありません。</p>
-            @endforelse
+              @empty
+                  <p>気にした人はまだいません。</p>
+              @endforelse
+      
             
-            
-
         </div>
-        
-        
-
-        
-        
 
         
       </div> 

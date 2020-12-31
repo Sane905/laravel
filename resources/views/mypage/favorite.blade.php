@@ -53,38 +53,32 @@
 
       <div class="tab-content">
         
-        <div id="send" class="tab-pane active">
-        　  @forelse($sends as $send)
-                  <a href="../band/{{$send->profile->id}}">
+        
+        <div id="favorite" class="tab-pane active">
+        　　 @forelse($favorites as $favorite)
+                  <a href="../band/{{$favorite->profile->id}}">
                   <div class="border-top p-4">
                       <div class="d-flex">
-                        <img class="mw-10 rounded-circle" src="{{$send->profile->image}}" width=50 height=50>
-                        <p class="ml-3 mt-3">{{$send->profile->user->name}}</p>
-                        <time class="text-secondary ml-3 mt-3">
-                            {{ $send->created_at->format('Y.m.d H:i') }}
-                        </time>
-                        
+                        <img class="mw-10 rounded-circle" src="{{$favorite->profile->image}}" width=50 height=50>
+                        <p class="ml-3">{{$favorite->name}}</p>
+                        <p class="mr-3 ml-3">{{$favorite->profile->age}}</p>
+                        <p>{{$favorite->profile->gender}}</p>
                       </div>
-                      
-                      <p class="mt-2">
-                          {!! nl2br(e($send->body)) !!}
-                      </p>
                   </div>
                   </a>
+                  <good-component
+                      :user="{{json_encode($favorite)}}">
+                      </good-component>
                 
-            @empty
-                <p>コメントはまだありません。</p>
-            @endforelse
+                
+              @empty
+                  <p>気にしてる人はまだいません。</p>
+              @endforelse
+      
             
-            
-
         </div>
-        
-        
 
         
-        
-
         
       </div> 
         

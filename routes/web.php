@@ -27,6 +27,10 @@ Route::resource('profile','ProfileController',['only'=>['store','create']]);
 
 Route::resource('mypage','MypageController',['only'=>['index']]);
 Route::get('mypage/send','MypageController@send')->name('mypage.send');
+Route::get('mypage/favorite','MypageController@favorite')->name('mypage.favorite');
+Route::get('mypage/good','MypageController@good')->name('mypage.good');
+
+
 
 Route::get('mypage/edit','MypageController@edit');  
 Route::post('mypage/edit', 'MypageController@update');
@@ -52,10 +56,10 @@ Route::get('ajax/band/{id}/hasfavorites','FavoriteController@hasfavorite');
 
 
 
-Route::get('ajax/mypage/{id}/favorites','FavoriteController@store');
-Route::get('ajax/mypage/{id}/unfavorites','FavoriteController@destroy');
-Route::get('ajax/mypage/{id}/countfavorites','FavoriteController@count');
-Route::get('ajax/mypage/{id}/hasfavorites','FavoriteController@hasfavorite');
+Route::get('ajax/mypage/favorite/{id}/favorites','FavoriteController@store');
+Route::get('ajax/mypage/favorite/{id}/unfavorites','FavoriteController@destroy');
+Route::get('ajax/mypage/favorite/{id}/countfavorites','FavoriteController@count');
+Route::get('ajax/mypage/favorite/{id}/hasfavorites','FavoriteController@hasfavorite');
 
 
 Route::post('band/{id}','CommentController@store');
