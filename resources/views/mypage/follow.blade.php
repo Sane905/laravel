@@ -64,7 +64,7 @@
                       </div>
                       
                       <div class="d-flex align-self-center justify-content-end">
-                        <a href="chat/{{$follow->id}}"><button type="button" class="btn btn-primary btn-block">チャットする</button></a>
+                        <a href="../chat/{{$follow->id}}"><button type="button" class="btn btn-primary btn-block">チャットする</button></a>
                       </div>
 
                   </div>
