@@ -2022,9 +2022,56 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['user'],
+  data: function data() {
+    return {
+      result: "false",
+      count: ""
+    };
+  },
   mounted: function mounted() {
-    console.log('Component mounted.');
+    this.hasfavorites();
+    this.countfavorites();
+  },
+  methods: {
+    favorite: function favorite() {
+      var _this = this;
+
+      axios.get('ajax/good/' + this.user.id + '/favorites').then(function (res) {
+        _this.count = res.data.count;
+      })["catch"](function (error) {
+        console.log(error.response);
+      });
+    },
+    unfavorite: function unfavorite() {
+      var _this2 = this;
+
+      axios.get('ajax/good/' + this.user.id + '/unfavorites').then(function (res) {
+        _this2.count = res.data.count;
+      })["catch"](function (error) {
+        console.log(error.response);
+      });
+    },
+    countfavorites: function countfavorites() {
+      var _this3 = this;
+
+      axios.get('ajax/good/' + this.user.id + '/countfavorites').then(function (res) {
+        _this3.count = res.data;
+      })["catch"](function (error) {
+        console.log(error.response);
+      });
+    },
+    hasfavorites: function hasfavorites() {
+      var _this4 = this;
+
+      axios.get('ajax/good/' + this.user.id + '/hasfavorites').then(function (res) {
+        _this4.result = res.data;
+      })["catch"](function (error) {
+        console.log(error.response);
+      });
+    }
   }
 });
 
@@ -44221,32 +44268,42 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
-              )
-            ])
-          ])
-        ])
-      ])
+  return _c("div", { staticClass: "text-right" }, [
+    _vm.result
+      ? _c(
+          "button",
+          {
+            staticClass: "btn btn-danger",
+            on: {
+              click: function($event) {
+                return _vm.unfavorite()
+              }
+            }
+          },
+          [_vm._v("\n  気になる解除\n  ")]
+        )
+      : _c(
+          "button",
+          {
+            staticClass: "btn btn-success",
+            on: {
+              click: function($event) {
+                return _vm.favorite()
+              }
+            }
+          },
+          [
+            _c("i", { staticClass: "far fa-thumbs-up" }),
+            _vm._v("\n  気になる\n  ")
+          ]
+        ),
+    _vm._v(" "),
+    _c("span", { staticClass: "badge badge-pill badge-primary" }, [
+      _vm._v("気になる数:" + _vm._s(_vm.count))
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
