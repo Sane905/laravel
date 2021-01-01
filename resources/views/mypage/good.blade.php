@@ -73,6 +73,9 @@
                   
                   
                   </a>
+                  <example-component
+                      :user="{{json_encode($good)}}">
+                      </example-component>
                 
               @empty
                   <p>気にした人はまだいません。</p>

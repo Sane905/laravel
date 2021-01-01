@@ -63,6 +63,11 @@ Route::get('mypage/ajax/favorite/{id}/unfavorites','FavoriteController@destroy')
 Route::get('mypage/ajax/favorite/{id}/countfavorites','FavoriteController@count');
 Route::get('mypage/ajax/favorite/{id}/hasfavorites','FavoriteController@hasfavorite');
 
+Route::get('mypage/ajax/good/{id}/favorites','FavoriteController@store');
+Route::get('mypage/ajax/good/{id}/unfavorites','FavoriteController@destroy');
+Route::get('mypage/ajax/good/{id}/countfavorites','FavoriteController@count');
+Route::get('mypage/ajax/good/{id}/hasfavorites','FavoriteController@hasfavorite');
+
 
 Route::post('band/{id}','CommentController@store');
 
