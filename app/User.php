@@ -44,7 +44,7 @@ class User extends Authenticatable
     }
 
     public function comment(){
-        return $this->hasMany('App\Comment','user_id');
+        return $this->hasMany('App\Comment');
     }
 
     public function favorites(){
@@ -53,6 +53,10 @@ class User extends Authenticatable
 
     public function messages(){
         return $this->hasMany('App\Message');
+    }
+
+    public function post(){
+        return $this->hasMany('App\Post');
     }
 }
 

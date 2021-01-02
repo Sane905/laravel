@@ -17,36 +17,47 @@
     </form>
   </section>
     
-    
-  <section class="card">
+  @foreach ($threads as $thread)
+  <section class="card mt-4">
+  <a href="{{ url('thread/'.$thread->id) }}">
+
     <div class="card-header">
-      スレッド一覧
+    {{ $thread->title }}
     </div>
     
     <div class="card-body">
-      <div class="media">
-       
+      
+        <div class="card-text">
+
+        
+          
+        <span class="mr-2">
+            投稿日時: {{ $thread->updated_at->format('Y/m/d H:i:s') }}
+
+        </span>
+
+        <span class="badge badge-primary">
+            投稿:{{ count($thread->post_list) }}件
+        </span>
+        
+        
+        
+        </div>
       
 
-        <div class="media-body">
-        @foreach ($threads as $thread)
-        <a href="{{ url('thread/'.$thread->id) }}">
+      
+        
+        
+       
 
 
-          <p class="media-heading">{{ $thread->title }}</p>
-          <p>({{ count($thread->post_list) }})</p>
-          <time class="text-secondary mr-4">
-            {{ $thread->updated_at->format('Y/m/d H:i:s') }}
-          </time>
-        </a>
-        @endforeach
+      
 
-
-        </div>
-
-      </div>
+      
     </div>
+    </a>
   </section>
+  @endforeach
   </div>
 
 
@@ -56,3 +67,4 @@
 
 
 @endsection
+

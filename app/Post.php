@@ -11,6 +11,11 @@ class Post extends Model
     protected $touches = ['thread'];
     public function thread()
     {
-        return $this->belongsTo('App\Thread');
+        return $this->belongsTo('App\Thread','thread_id');
+    }
+
+    public function post_user()
+    {
+        return $this->belongsTo('App\User','user_id');
     }
 }
