@@ -1,28 +1,60 @@
 @extends('layouts.app')
 @section('content')
-
-<a href="message">スレッド一覧に戻る</a>
-<h1>{{$thread->title}}</h1>
+<div class="container mt-4">
+  <div class="border p-4">
+  <a class="btn btn-danger" href="../message">スレッド一覧に戻る</a>
+<h1 class="h5 mb-4 mt-4">{{$thread->title}}</h1>
  
 {{-- 新規投稿 --}}
-<form method="post" action="{{route('post.store')}}">
+<form class="mb-4" method="post" action="{{route('post.store')}}">
     @csrf
     <input type="hidden" name="thread_id" value="{{$thread->id}}"></input>
-    <p>
-        <input type="submit" value="投稿"></input>
-    </p>
-    <p>
-        内容：<textarea name="content" rows="4" cols="40"></textarea>
-    </p>
+    <div class="form-group">
+        <label for="content">
+            投稿内容
+        </label>
+
+        <textarea
+            id="content"
+            name="content"
+            class="form-control"
+            rows="4"
+        ></textarea>
+        
+    </div>
+
+    <div class="mt-4">
+        <button type="submit" class="btn btn-primary">
+            投稿する
+        </button>
+    </div>
+    
 </form>
  
 {{-- 投稿一覧 --}}
 @foreach ($thread->post_list as $post)
-    {{ $post->created_at->format('Y/m/d H:i:s') }}（{{ $post->name }}）
-    <div>
+    <div class="border-top p-4">
+    <p>
+      {{$post->post_user->name}}
+    </p>
+    <p class="mt-2">
         {{-- HTMLタグ無効化してから、改行を<br>変換  --}}
         {!! nl2br(htmlspecialchars($post->content)) !!}
+    </p>
+
+    <time class="text-secondary">
+    {{ $post->created_at->format('Y/m/d H:i:s') }}
+    </time>
+      
     </div>
-@endforeach
+    @endforeach
+  
+  </div>
+</div>
+
+
+    
+
 
 @endsection
+
