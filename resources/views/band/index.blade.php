@@ -9,7 +9,7 @@
    <h2>全てのオト仲間を探す</h2>
    @endif
    </div>
-  
+   
   <div class="row">
   <div class="col-lg-3">
 
