@@ -32,7 +32,7 @@
 </form>
  
 {{-- 投稿一覧 --}}
-@foreach ($thread->post_list as $post)
+@forelse ($thread->post_list as $post)
     <div class="border-top p-4">
     <p>
       {{$post->post_user->name}}
@@ -46,8 +46,10 @@
     {{ $post->created_at->format('Y/m/d H:i:s') }}
     </time>
       
-    </div>
-    @endforeach
+    </div>  
+    @empty
+    <p>まずはあなたの一言を投稿してみましょう。</p>
+    @endforelse
   
   </div>
 </div>
