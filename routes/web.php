@@ -71,12 +71,6 @@ Route::get('mypage/ajax/good/{id}/hasfavorites','FavoriteController@hasfavorite'
 
 Route::post('band/{id}','CommentController@store');
 
-Route::get('message','ThreadController@index');
-// スレッド関連
-Route::resource('thread', 'ThreadController');
- 
-// ポスト関連
-Route::resource('post', 'PostController');
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('ajax/message','Ajax\MessageController@index');
@@ -85,4 +79,15 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('chat/{recieve}','ChatController@index')->name('chat');
     Route::get('chat/ajax/{recieve}','Ajax\ChatController@index');
     Route::post('chat/ajax/{recieve}','Ajax\ChatController@create')->name('chatSend');
+
+    Route::get('message','ThreadController@index');
+    // スレッド関連
+    Route::resource('thread', 'ThreadController');
+    
+    // ポスト関連
+    Route::resource('post', 'PostController');
+
+    Route::resource('meetings','Zoom\MeetingController');
+
 });
+

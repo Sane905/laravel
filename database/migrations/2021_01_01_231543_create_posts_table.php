@@ -19,7 +19,6 @@ class CreatePostsTable extends Migration
             $table->text('content')->comment('投稿内容');
             $table->integer('thread_id')->unsigned()->comment('どのスレの投稿か？');
             $table->timestamps();
-            $table->foreign('thread_id')->references('id')->on('threads')->onDelete('cascade');
         });
     }
 
