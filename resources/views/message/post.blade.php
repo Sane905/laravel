@@ -32,20 +32,25 @@
 </form>
  
 {{-- 投稿一覧 --}}
-@forelse ($thread->post_list as $post)
+@forelse ($thread->post_list as $key=>$post)
     <div class="border-top p-4">
-    <p>
-      {{$post->post_user->name}}
-    </p>
-    <p class="mt-2">
-        {{-- HTMLタグ無効化してから、改行を<br>変換  --}}
-        {!! nl2br(htmlspecialchars($post->content)) !!}
-    </p>
+        <p id="{{$key+1}}" class="mr-3 mt-3">{{$key+1}}</p>
+            <div class="d-flex">
+                <img class="mw-10 rounded-circle" src="{{$post->post_user->profile->image}}" width=50 height=50>
+                <p class="ml-3 mt-3">
+                {{$post->post_user->name}}
+                </p>
+            </div>
+        
+        <p class="mt-2">
+            {{-- HTMLタグ無効化してから、改行を<br>変換  --}}
+            {!! nl2br(htmlspecialchars($post->content)) !!}
+        </p>
 
-    <time class="text-secondary">
-    {{ $post->created_at->format('Y/m/d H:i:s') }}
-    </time>
-      
+        <time class="text-secondary">
+        {{ $post->created_at->format('Y/m/d H:i:s') }}
+        </time>
+        
     </div>  
     @empty
     <p>まずはあなたの一言を投稿してみましょう。</p>
