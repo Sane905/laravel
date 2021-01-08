@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Zoom;
 
-use App\Models\Meeting;
+use App\Meeting;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\MeetingRequest;
@@ -48,7 +48,7 @@ class MeetingController extends Controller
     public function store(MeetingRequest $request, Meeting $meeting)
     {
         // ZoomAPIへ、ミーティング作成のリクエスト
-        $path = 'users/' . config('zoom.zoom_account_email') . '/meetings';
+        $path = 'users/' . env('ZOOM_ACCOUNT_EMAIL', '') . '/meetings';
         $response = $this->client->zoomPost($path, $request->zoomParams());
 
         // レスポンスのミーティング開始日時を、日本時刻に変換

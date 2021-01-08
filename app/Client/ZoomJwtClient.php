@@ -4,12 +4,14 @@ namespace App\Client;
 use Illuminate\Support\Facades\Log;
 use GuzzleHttp\Client;
 
+
+
 class ZoomJwtClient
 {
     private function generateZoomToken()
     {
-        $key = env('8FbWkf3GSDi1NJ2WauFojQ', '');
-        $secret = env('r4tLaQLCDcKVMwJg96Kz2qbIZTRGnsjwF80b', '');
+        $key = config('zoom.zoom_api_key');
+        $secret = config('zoom.zoom_api_secret');
         $payload = [
             'iss' => $key,
             'exp' => strtotime('+1 minute'),
