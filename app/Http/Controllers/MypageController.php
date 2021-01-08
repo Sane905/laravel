@@ -126,50 +126,47 @@ class MypageController extends Controller
         return view('mypage.profile',['profiles'=>$profiles]);
     }
 
-    public function ProfileUpdate(ProfileRequest $request){
+    public function ProfileUpdate(ProfileRequest $request) {
         $profile = Auth::id();
         $profiles = Profile::find($profile);
         
         unset($request->all()['_token']);
 
-            $profiles->age = $request->age;
-            $profiles->place = $request->place;
-            $profiles->introduce = $request->introduce;
-            $profiles->music = implode("/", $request->music);
-            $profiles->gender = $request->gender;
+        $profiles->age = $request->age;
+        $profiles->place = $request->place;
+        $profiles->introduce = $request->introduce;
+        $profiles->music = implode("/", $request->music);
+        $profiles->gender = $request->gender;
 
-    
-            if($request->hasFile('image')){
-                Storage::disk('s3')->delete('profile',$profiles->image,'public');
-                $url = $request->file('image');
-                $path = Storage::disk('s3')->putFile('profile',$url,'public');
-                $profiles->image = Storage::disk('s3')->url($path);
-                $profiles->save();
-            }
-    
-            
-        
-        
+
+        if($request->hasFile('image')){
+            Storage::disk('s3')->delete('profile',$profiles->image,'public');
+            $url = $request->file('image');
+            $path = Storage::disk('s3')->putFile('profile',$url,'public');
+            $profiles->image = Storage::disk('s3')->url($path);
+            $profiles->save();
+        }
+
+        if($request->hasFile('image')){
+            $url = $request->file('image');
+            $disk = Storage::disk('s3');
+            $path = $disk->putFile('/profile',$url,'public');
+            $image = $disk->url($path);
+            $profiles->image = $image;
+        }else{
+            $image = 'https://localdocker.s3-ap-northeast-1.amazonaws.com/image/default.jpeg';
+            $profiles->image = $image;
+
+        }
+
         $profiles->save();
 
         $user = Auth::id();
         $users = Profile::find($user);
 
-       
-
-      
-
-      
-
         session()->flash('flash_message', 'プロフィールの変更が完了しました');
 
         return redirect('/mypage')->with('users',$users);;
-
-
-
-
-
-
     }
 
     public function send()
