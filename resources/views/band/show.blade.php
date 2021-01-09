@@ -13,7 +13,7 @@
                 </div>
 
         @endif
-      <div class="card">
+      <div class="card category">
         <img class="card-img-top" src="{{$user->image}}" height=300>
           <div class="card-body">
           <h4 class="card-title text-center">{{$user->user->name}}</h4>
@@ -34,10 +34,14 @@
                   居住地:{{$user->place}}
                 </h5>
 
-                
-                <h5 class="card-text mb-5">
-                好きな音楽ジャンル:<br><br>{{$user->music}}
-                </h5>
+                <div class="box">
+                    @foreach($music as $category)
+                      <span class="badge badge-pill badge-warning">
+                          {{$category}}
+                      </span>
+                    @endforeach
+                </div>
+                  
                 
                 
                 <h5 class="card-text mb-5">
