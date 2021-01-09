@@ -16,7 +16,7 @@
       <div class="carousel-heading">
         <h2 class="carousel-sentence">日常では巡り合えないようなオト仲間を作ろう!</h2>
         <h2 class="carousel-sentence">キミと繋がれる音楽を持つオト仲間はすぐそこにいる</h2>
-        <a class="d-flex justify-content-center" href="{{action('SearchController@index')}}"><button type="button" class="btn btn-outline-secondary btn-lg mt-3">オト仲間を探す</button></a>
+        <a class="d-flex justify-content-center" href="{{action('SearchController@index')}}"><button type="button" class="btn btn-danger btn-lg mt-3">オト仲間を探す</button></a>
 
       </div>
       
@@ -26,7 +26,7 @@
       <div class="carousel-heading">
         <h2 class="carousel-sentence">日常では巡り合えないようなオト仲間を作ろう!</h2>
         <h2 class="carousel-sentence">キミと繋がれる音楽を持つオト仲間はすぐそこにいる</h2>
-        <a class="d-flex justify-content-center" href="{{action('SearchController@index')}}"><button type="button" class="btn btn-outline-secondary btn-lg mt-3">オト仲間を探す</button></a>
+        <a class="d-flex justify-content-center" href="{{action('SearchController@index')}}"><button type="button" class="btn btn-danger btn-lg mt-3">オト仲間を探す</button></a>
 
       </div>
     </div>
@@ -35,7 +35,7 @@
       <div class="carousel-heading">
         <h2 class="carousel-sentence">日常では巡り合えないようなオト仲間を作ろう!</h2>
         <h2 class="carousel-sentence">キミと繋がれる音楽を持つオト仲間はすぐそこにいる</h2>
-        <a class="d-flex justify-content-center" href="{{action('SearchController@index')}}"><button type="button" class="btn btn-outline-secondary btn-lg mt-3">オト仲間を探す</button></a>
+        <a class="d-flex justify-content-center" href="{{action('SearchController@index')}}"><button type="button" class="btn btn-danger btn-lg mt-3">オト仲間を探す</button></a>
        </div>
     </div>
   </div>

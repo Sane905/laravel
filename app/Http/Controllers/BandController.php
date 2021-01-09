@@ -24,8 +24,10 @@ class BandController extends Controller
     public function show($id)
     {
         $user = Profile::find($id);
+        $music = explode(",", $user->music);
+        
         $comments = $user->comment()->orderBy('created_at', 'desc')->paginate(5);
-        return view('band.show')->with(['user'=>$user,'comments'=>$comments]);
+        return view('band.show')->with(['user'=>$user,'comments'=>$comments, 'music'=>$music]);
     }
 
     public function create()
