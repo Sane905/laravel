@@ -44441,7 +44441,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "form-group mt-4" }, [
     _c("label", { attrs: { for: "formGroupExampleInput" } }, [
-      _vm._v("プロフィール画像をのせてください。(任意)")
+      _vm._v("プロフィール画像をのせてください。")
     ]),
     _vm._v(" "),
     _c("input", {
