@@ -1,9 +1,8 @@
-@extends('layouts.search')
+@extends('layouts.app')
 @section('content')
 
 <div class="container py-4">
-  <div class="page">
-  <section>
+  
    <form class="chart-form mb-3" method="post" action="{{route('thread.store')}}">
       @csrf
       <div class="input-group">
@@ -15,7 +14,6 @@
         </div>
       </div>
     </form>
-  </section>
     
   @foreach ($threads as $thread)
   <section class="card mt-4">
@@ -58,7 +56,7 @@
     </a>
   </section>
   @endforeach
-  </div>
+
 
 
     

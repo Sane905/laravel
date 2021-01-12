@@ -76,9 +76,9 @@
             <div class="media mt-5 row">
             <img class="d-flex align-self-center mr-3 col-lg-6 col-sm-12 rounded-lg" src="https://musicwebservice.s3.ap-northeast-1.amazonaws.com/top/jo-szczepanska-5aiRb5f464A-unsplash.jpg" alt="Generic placeholder image">
             <div class="media-body col-lg-6 col-sm-12">
-                <h5 class="mt-0 text-center">コメントや掲示板機能が充実</h5>
+                <h5 class="mt-0 text-center">コメントや掲示板機能,ZOOM機能が充実</h5>
 　　　　　　　　　<p>オトLABOでは検索するだけでなく気に入ったユーザーにコメントすることが可能です。</p>
-                <p class="mb-0">さらに掲示板機能により登録している全ユーザー間で音楽の話題を自ら発信し、コミュニケーションを取ることが可能です。</p>
+                <p class="mb-0">さらに掲示板機能、ZOOMでスレッドを立ち上げることにより登録している全ユーザー間で音楽の話題を自ら発信し、オフラインでもオンラインでもユーザー間でコミュニケーションを取ることが可能です。</p>
             </div>
             </div>
 
