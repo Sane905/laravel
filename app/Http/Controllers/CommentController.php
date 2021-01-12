@@ -23,10 +23,12 @@ class CommentController extends Controller
     $user = Profile::find($id);
     $comments = $user->comment()->orderBy('created_at', 'desc')->paginate(5);
     session()->flash('complete_message', 'コメントの投稿が完了しました');
+    $music = explode(",", $user->music);
+
 
      
 
-       return view('band.show',['user'=>$user,'comments'=>$comments]);        
+       return view('band.show',['user'=>$user,'comments'=>$comments,'music'=>$music]);        
 
     }
 
