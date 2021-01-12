@@ -1,4 +1,4 @@
-@extends('layouts.search')
+@extends('layouts.app')
 @section('content')
 
   <div class="container my-5">
@@ -8,7 +8,6 @@
           <h2 class="h4 card-header text-center blue-gradient text-white">Zoomミーティングを編集</h2>
           <div class="card-body pt-3">
 
-            @include('error_card_list')
 
             <div class="my-4">
               <form method="POST" class="w-75 mx-auto" action="{{ route('meetings.update', ['meeting' => $meeting]) }}">

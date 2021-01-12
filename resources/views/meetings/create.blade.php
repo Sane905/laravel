@@ -1,4 +1,4 @@
-@extends('layouts.search')
+@extends('layouts.app')
 
 @section('title', 'Zoomミーティング作成')
 
@@ -13,7 +13,6 @@
           <h2 class="h4 card-header text-center blue-gradient text-white">Zoomミーティングを作成しましょう！</h2>
           <div class="card-body pt-3">
 
-            @include('error_card_list')
 
             <div class="my-4">
               <form method="POST" class="w-75 mx-auto" action="{{ route('meetings.store') }}">
