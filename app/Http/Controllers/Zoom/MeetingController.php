@@ -18,8 +18,6 @@ class MeetingController extends Controller
 
     public function __construct(ZoomJwtClient $client) {
         $this->client = $client;
-
-        $this->authorizeResource(Meeting::class, 'meeting');
     }
 
     public function index(Request $request)
@@ -28,7 +26,6 @@ class MeetingController extends Controller
 
         $query = Meeting::query();
 
-        ### ミーティング一覧を、無限スクロールで表示 ###
         $meetings = $query->with(['user'])
         ->orderBy('created_at', 'desc')
         ->paginate(5);
@@ -47,8 +44,10 @@ class MeetingController extends Controller
 
     public function store(MeetingRequest $request, Meeting $meeting)
     {
+        $request->session()->regenerateToken();
+
         // ZoomAPIへ、ミーティング作成のリクエスト
-        $path = 'users/' . env('ZOOM_ACCOUNT_EMAIL', '') . '/meetings';
+        $path = 'users/' . config('zoom.zoom_account_email') . '/meetings';
         $response = $this->client->zoomPost($path, $request->zoomParams());
 
         // レスポンスのミーティング開始日時を、日本時刻に変換
@@ -58,9 +57,7 @@ class MeetingController extends Controller
 
         // 作成したミーティング情報をDBに保存
         if ($response->getStatusCode() === 201) {  // 201：ミーティング作成成功のHTTPステータスコード
-            $meeting
-                ->fill($body + [ 'meeting_id' => $body['id'], 'user_id' => $request->user()->id ])
-                ->save();
+            $meeting->fill($body + [ 'meeting_id' => $body['id'], 'user_id' => $request->user()->id ])->save();
 
             session()->flash('msg_success', 'ミーティングを作成しました');
             return redirect()->route('meetings.index');
