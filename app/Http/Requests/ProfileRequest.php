@@ -29,7 +29,7 @@ class ProfileRequest extends FormRequest
                 'age'=>'not_in:error',
                 'artist'=>'required',
                 'introduce'=>'required|max:140',
-                'image'=>'required|image|mimes:jpeg,png,jpg,gif',
+                'image'=>'image|mimes:jpeg,png,jpg,gif|max:2048',
                 'gender'=>'required',
                 'music'=>'required',
                 'place'=>'not_in:error'
@@ -45,9 +45,9 @@ class ProfileRequest extends FormRequest
             'age.required'=>'年齢は必須です。',
             'music.required'=>'音楽ジャンルは必須です。',
             'gender.required'=>'性別は必須です。',
-            'image.required'=>'画像の登録は必須です。',
             "mines" => "指定された拡張子（PNG/JPG/GIF）ではありません。",
             'image.image'=>'指定されたファイルが画像ではありません。',
+            'image.max:2048'=>'画像の容量が大きすぎます。',
             'place.not_in'=>'居住地を選択してください。',
             'age.not_in'=>'年齢を選択してください。'
 

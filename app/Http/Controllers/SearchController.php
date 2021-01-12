@@ -80,10 +80,14 @@ class SearchController extends Controller
 
         }
 
+        $count = new Profile;
+        $total = $count->all();
+
+
         
         
         
-        return view('band.index')->with(['keyword'=>$keyword,'profiles'=>$results]);
+        return view('band.index')->with(['keyword'=>$keyword,'profiles'=>$results,'total'=>$total]);
 
     }
 }

@@ -2,13 +2,15 @@
 @section('content')
 <div class="container py-4 band">
 
-   <div class="d-flex">
-   @if(!empty($keyword))
-      <h2>「{{ $keyword }}」のオト仲間を探す</h2>
-  @elseif(empty($keyword))
-   <h2>全てのオト仲間を探す</h2>
-   @endif
-   </div>
+  <div class="d-flex">
+    @if(!empty($keyword))
+        <h2>「{{ $keyword }}」のオト仲間を探す</h2>
+    @elseif(empty($keyword))
+    <h2>全てのオト仲間を探す</h2>
+    @endif
+    <h3 class="ml-5">{{count($profiles)}}件 / {{count($total)}}件中</h3>
+
+  </div>
    
   <div class="row">
   <div class="col-lg-3">
@@ -23,6 +25,7 @@
         </a>
     </div>
 </div>
+
 
 
 <div class="card mt-5">
@@ -174,7 +177,7 @@
     <div class="d-flex flex-wrap list">
    
       @foreach($profiles as $profile)
-      <div class="card mt-5">
+      <div class="card mt-5 category">
         <a href="band/{{$profile->id}}">
 
         <img class="card-img-top" src="{{$profile->image}}" height=240 alt="Card image cap">
@@ -186,6 +189,13 @@
           <p class="card-text">
             性別:{{$profile->gender}}
           </p>
+        
+        <div class="box">
+          @foreach(explode(",",$profile->music) as $category)
+          <span class="badge badge-pill badge-warning">{{$category}}</span>
+          @endforeach
+        </div>
+          
       
           <p class="card-text">
             {{\Illuminate\Support\Str::limit($profile->introduce, 20)}}

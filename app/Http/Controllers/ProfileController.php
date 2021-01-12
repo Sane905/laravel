@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ProfileRequest;
 use App\Profile;
 use App\User;
-use App\Age;
 use Auth;
 use Illuminate\Support\Facades\Storage;
 
@@ -41,20 +40,18 @@ class ProfileController extends Controller
      */
     public function store(ProfileRequest $request)
     {
-            
-          
 
-           if(isset($request->image)) {
+        if($request->hasFile('image')){
             $url = $request->file('image');
-            $path = Storage::disk('s3')->putFile('/profile',$url,'public');
-            $image = Storage::disk('s3')->url($path);
-        }else {
-            $image = '';
-        }    
-          
-           
+            $disk = Storage::disk('s3');
+            $path = $disk->putFile('/profile',$url,'public');
+            $image = $disk->url($path);
+        }else{
+            $image = 'https://localdocker.s3-ap-northeast-1.amazonaws.com/image/default.jpeg';
 
-            Profile::create([
+        }
+        
+        Profile::create([
             'artist'=>$request->artist,
             'introduce'=>$request->introduce,
             'user_id'=>$request->user()->id,
@@ -63,9 +60,8 @@ class ProfileController extends Controller
             'music'=>implode(",", $request->music),
             'gender'=>$request->gender,
             'image'=>$image,
-           
         ]);
-         
+            
         return view('profile.index');
 
     }
