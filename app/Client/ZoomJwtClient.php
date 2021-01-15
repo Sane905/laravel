@@ -16,7 +16,7 @@ class ZoomJwtClient
             'iss' => $key,
             'exp' => strtotime('+1 minute'),
         ];
-        return \Firebase\JWT\JWT::encode($payload, $secret, 'HS256');
+        return JWT::encode($payload, $secret, 'HS256');
     }
 
     private function zoomRequest(string $method, string $path, array $query, array $body)

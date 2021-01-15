@@ -1,4 +1,3 @@
-@csrf
 <div class="form-group">
   <label for="topic">
     ミーティング名
