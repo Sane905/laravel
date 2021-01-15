@@ -3,6 +3,7 @@ namespace App\Client;
 
 use Illuminate\Support\Facades\Log;
 use GuzzleHttp\Client;
+use Firebase\JWT\JWT;
 
 
 
