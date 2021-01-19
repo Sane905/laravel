@@ -19,6 +19,7 @@ __URL::__ <https://otolabo.net/>(AWS) <https://music-web-service.herokuapp.com/>
 * アカウントに対しコメントをつけてもらうことでユーザーはマイページでコメントを確認して同じ音楽の趣味を持つ仲間を認知できる
 * いいね機能がありお互いにいいねをするとマイページ上の「相互いいね」欄にチャットボタンが表示し、密なやり取りが可能になる。
 * 掲示板機能によりいいねに関わらず登録している全ユーザーとも匿名でやりとりできる
+* ZOOMでミーティングを作成することにより共通の音楽仲間と会話できる。
 
 ## 開発した背景
 
@@ -47,6 +48,7 @@ __URL::__ <https://otolabo.net/>(AWS) <https://music-web-service.herokuapp.com/>
   - __Laravel 6.18.36__
   - __PHPUnit 8.5.8__
   - __Pusher__
+  - __ZOOM API__
 
 * __インフラ__
   - __AWS__(EC2, ALB, ACM, S3, RDS, Route53, VPC, IAM )
@@ -69,6 +71,9 @@ __URL::__ <https://otolabo.net/>(AWS) <https://music-web-service.herokuapp.com/>
   - アカウント登録　アカウント編集機能
   - ログイン、ログアウト機能
   - 画像登録の際のリアルタイム表示(Vue.js)
+
+*__ZOOM API連携__
+  - ミーティング作成・編集・削除機能
 
 * __Pusher連携__
   - 相互フォロー同士によるチャット機能
@@ -128,6 +133,10 @@ __URL::__ <https://otolabo.net/>(AWS) <https://music-web-service.herokuapp.com/>
     <tr>
       <td>profile_user</td>
        <td>profileとuserの中間テーブル</td>
+    </tr>
+    <tr>
+      <td>meetings</td>
+       <td>zoom ミーティング作成のための入力テーブル</td>
     </tr>
   </tbody>
 </table>
