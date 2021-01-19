@@ -11,6 +11,7 @@
 
             <div class="my-4">
               <form method="POST" class="w-75 mx-auto" action="{{ route('meetings.update', ['meeting' => $meeting]) }}">
+                @csrf
                 @method('PATCH')
                 @include('meetings.form')
 
