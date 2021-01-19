@@ -31,7 +31,7 @@
       <a href="../mypage/edit" class="btn mypage-btn" role="button" aria-pressed="true"><button type="button" class="btn btn-primary btn-lg active mr-4 text-center">ログイン情報を編集</button></a>
       <a href="../mypage/profile" class="btn mypage-btn" role="button" aria-pressed="true"><button type="button" class="btn btn-primary btn-lg active mr-4 text-center">プロフィールを編集</button></a>
 
-      
+
       <div id="app" class="card mt-4">
         <ul class="nav nav-tabs">
           <li class="nav-item w-33">
@@ -58,7 +58,7 @@
                   <div class="border-top p-4">
                       <div class="d-flex">
                         <img class="mw-10 rounded-circle" src="{{$good->image}}" width=50 height=50>
-                        
+
                         <div class="d-flex">
                           <p class="ml-3">{{$good->user->name}}</p>
                           <p class="mr-3 ml-3">{{$good->age}}</p>
@@ -66,35 +66,35 @@
 
                         </div>
 
-                        
+
                       </div>
-                      
+
                   </div>
-                  
-                  
+
+
                   </a>
                   <example-component
                       :user="{{json_encode($good)}}">
                       </example-component>
-                
+
               @empty
                   <p>気にした人はまだいません。</p>
               @endforelse
-      
-            
+
+
         </div>
 
-        
-      </div> 
-        
-        </div>
 
-      
       </div>
-      
+
+        </div>
+
+
+      </div>
+
 
     </div>
-  
-  
+
+
 </div>
 @endsection

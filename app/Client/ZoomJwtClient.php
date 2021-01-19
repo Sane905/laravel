@@ -35,15 +35,15 @@ class ZoomJwtClient
                 ],
                 'query' => json_encode($query),
                 'body' => json_encode($body),
-            ] );
+            ], );
         return $response;
     }
-    
+
     public function zoomGet(string $path, array $query = [])
     {
         return $this->zoomRequest('GET', $path, $query, $body = []);
 
-    }  
+    }
 
     public function zoomPost(string $path, array $body = [])
     {
