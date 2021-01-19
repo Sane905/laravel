@@ -96,7 +96,7 @@ class MeetingController extends Controller
     {
         // ZoomAPIにミーティング更新のリクエスト
         $id = $meeting->meeting_id;
-        $path = 'meetings/' . $id;
+        $path = 'v2/meetings/' . $id;
         $response = $this->client->zoomPatch($path, $request->zoomParams());
 
          // DBに更新後のミーティングを保存
