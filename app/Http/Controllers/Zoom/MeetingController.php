@@ -47,7 +47,7 @@ class MeetingController extends Controller
         $request->session()->regenerateToken();
 
         // ZoomAPIへ、ミーティング作成のリクエスト
-        $path = 'users/' . config('zoom.zoom_account_email') . '/meetings';
+        $path = 'v2/users/' . config('zoom.zoom_account_email') . '/meetings';
         $response = $this->client->zoomPost($path, $request->zoomParams());
 
         // レスポンスのミーティング開始日時を、日本時刻に変換
@@ -71,7 +71,7 @@ class MeetingController extends Controller
     {
         // ZoomAPIにミーティング削除のリクエスト
         $id = $meeting->meeting_id;
-        $path = 'meetings/' . $id;
+        $path = 'v2/meetings/' . $id;
         $response = $this->client->zoomDelete($path);
 
         // DBからもミーティングを削除
@@ -96,7 +96,7 @@ class MeetingController extends Controller
     {
         // ZoomAPIにミーティング更新のリクエスト
         $id = $meeting->meeting_id;
-        $path = 'meetings/' . $id;
+        $path = 'v2/meetings/' . $id;
         $response = $this->client->zoomPatch($path, $request->zoomParams());
 
          // DBに更新後のミーティングを保存

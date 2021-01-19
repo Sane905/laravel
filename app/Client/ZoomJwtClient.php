@@ -35,7 +35,7 @@ class ZoomJwtClient
                 ],
                 'query' => json_encode($query),
                 'body' => json_encode($body),
-            ] );
+            ]);
         return $response;
     }
     
