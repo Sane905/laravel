@@ -72,7 +72,7 @@ __URL::__ <https://otolabo.net/>(AWS) <https://music-web-service.herokuapp.com/>
   - ログイン、ログアウト機能
   - 画像登録の際のリアルタイム表示(Vue.js)
 
-*__ZOOM API連携__
+* __ZOOM API連携__
   - ミーティング作成・編集・削除機能
 
 * __Pusher連携__
