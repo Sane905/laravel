@@ -55,13 +55,13 @@
                             @endif
                         @else
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('meetings.index') }}"><i class="fas fa-video mr-1"></i>Zoom</a>
+                            <a class="nav-link" href="{{ route('meetings.index') }}"><i class="fas fa-video mr-2"></i>Zoom</a>
                         </li>
                         <li class="nav-item">
                         <a class="nav-link" href="{{action('SearchController@index')}}"><span class="fas fa-search mr-2"></span>オト仲間を探す</a>
                         </li>
                          <li class="nav-item">
-                            <a class="nav-link" href="{{ action('ThreadController@index') }}">オト仲間掲示板</a>
+                            <a class="nav-link" href="{{ action('ThreadController@index') }}"><i class="fas fa-clipboard mr-2"></i>オト仲間掲示板</a>
                             </li>
                             <li class="nav-item dropdown d-flex">
                             <img class="mw-10 rounded-circle" src="{{Auth::user()->profile->image}}" width=40 height=40>
