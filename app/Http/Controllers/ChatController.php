@@ -9,7 +9,7 @@ use Auth;
 use App\User;
 class ChatController extends Controller
 {
-    
+
 
     public function index(Request $request,$recieve)
     {
@@ -20,7 +20,7 @@ class ChatController extends Controller
 
     public function store(Request $request)
     {
-         
+
 
     }
 

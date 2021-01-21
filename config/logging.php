@@ -102,5 +102,4 @@ return [
     ],
     'enable_request_log' => env('ENABLE_REQUEST_LOG', false),
 
-
 ];

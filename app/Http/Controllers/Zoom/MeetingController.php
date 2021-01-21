@@ -22,7 +22,7 @@ class MeetingController extends Controller
 
     public function index(Request $request)
     {
-        
+
 
         $query = Meeting::query();
 
@@ -30,7 +30,7 @@ class MeetingController extends Controller
         ->orderBy('created_at', 'desc')
         ->paginate(5);
 
-        
+
 
         return view('meetings.index', [
             'meetings' => $meetings
