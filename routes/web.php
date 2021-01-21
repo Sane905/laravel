@@ -34,25 +34,25 @@ Route::get('mypage/follow','MypageController@follow')->name('mypage.follow');
 
 
 
-Route::get('mypage/edit','MypageController@edit');  
+Route::get('mypage/edit','MypageController@edit')->name('mypage.edit');
 Route::post('mypage/edit', 'MypageController@update');
-Route::get('mypage/profile','MypageController@ProfileEdit');
+Route::get('mypage/profile','MypageController@ProfileEdit')->name('mypage.profile');
 Route::post('mypage/profile', 'MypageController@ProfileUpdate');
-Route::get('mypage/member', 'MypageController@show');
+Route::get('mypage/member', 'MypageController@show')->name('mypage.member');
 
 Route::get('band','SearchController@index')->name('band.index');
 Route::group(['middleware' => 'auth'], function(){
-    Route::get('band/{id}','BandController@show');   
+    Route::get('band/{id}','BandController@show');
     Route::get('band/ajax/{id}/favorites','FavoriteController@store');
     Route::get('band/ajax/{id}/unfavorites','FavoriteController@destroy');
     Route::get('band/ajax/{id}/countfavorites','FavoriteController@count');
-    Route::get('band/ajax/{id}/hasfavorites','FavoriteController@hasfavorite'); 
-    
+    Route::get('band/ajax/{id}/hasfavorites','FavoriteController@hasfavorite');
+
 });
 Route::get('ajax/band/{id}/favorites','FavoriteController@store');
 Route::get('ajax/band/{id}/unfavorites','FavoriteController@destroy');
 Route::get('ajax/band/{id}/countfavorites','FavoriteController@count');
-Route::get('ajax/band/{id}/hasfavorites','FavoriteController@hasfavorite'); 
+Route::get('ajax/band/{id}/hasfavorites','FavoriteController@hasfavorite');
 
 
 
@@ -83,7 +83,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('message','ThreadController@index');
     // スレッド関連
     Route::resource('thread', 'ThreadController');
-    
+
     // ポスト関連
     Route::resource('post', 'PostController');
 
