@@ -97,7 +97,7 @@ __URL::__ <https://otolabo.net/>(AWS) <https://music-web-service.herokuapp.com/>
 
 * __画像アップロード機能__ (AWS S3バケット)
 
-* __PHPUnitテスト__(全て終わっていない)
+* __PHPUnitテスト__
 
 * __レスポンシブWebデザイン__
 
