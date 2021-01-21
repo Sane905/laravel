@@ -83,6 +83,10 @@ __URL::__ <https://otolabo.net/>(AWS) <https://music-web-service.herokuapp.com/>
   - キーワードによる検索
   - アカウント登録で入力した「年齢、居住地、音楽ジャンル」などの複数条件検索
 
+* __掲示板機能__
+  - スレッドの作成
+  - スレッドごとに投稿作成
+
 * __いいね機能__(Vue.js / ajax)
 
 * __コメント機能__
@@ -96,7 +100,7 @@ __URL::__ <https://otolabo.net/>(AWS) <https://music-web-service.herokuapp.com/>
 * __PHPUnitテスト__(全て終わっていない)
 
 * __レスポンシブWebデザイン__
-  
+
 ## ER図
 ![ER図](https://user-images.githubusercontent.com/69663908/101127464-fae43a00-3640-11eb-9d2a-c323913261d6.png)
 
