@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CommentRequest;   
-use App\Comment; 
+use App\Http\Requests\CommentRequest;
+use App\Comment;
 use App\Profile;
 use App\User;
 use Auth;
@@ -13,6 +13,9 @@ class CommentController extends Controller
 {
     public function store(CommentRequest $request)
     {
+        // 二重送信対策
+        $request->session()->regenerateToken();
+
        Comment::create([
            'body'=>$request->body,
            'user_id'=>Auth::id(),
@@ -23,18 +26,16 @@ class CommentController extends Controller
     $user = Profile::find($id);
     $comments = $user->comment()->orderBy('created_at', 'desc')->paginate(5);
     session()->flash('complete_message', 'コメントの投稿が完了しました');
-    $music = explode(",", $user->music);
 
 
-     
 
-       return view('band.show',['user'=>$user,'comments'=>$comments,'music'=>$music]);        
+       return back();
 
     }
 
     public function delete()
     {
 
-        
+
     }
 }
