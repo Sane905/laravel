@@ -13,6 +13,9 @@ class CommentController extends Controller
 {
     public function store(CommentRequest $request)
     {
+        // 二重送信対策
+        $request->session()->regenerateToken();
+
        Comment::create([
            'body'=>$request->body,
            'user_id'=>Auth::id(),
