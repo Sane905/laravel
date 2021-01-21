@@ -13,7 +13,7 @@
             <p class="card-text">
               {{$users->introduce}}
             </p>
-            <a href="mypage/member" class="btn btn-primary btn-lg btn-block">詳しく見る</a>
+            <a href="{{route('mypage.member')}}" class="btn btn-primary btn-lg btn-block">詳しく見る</a>
           </div>
         </div>
 
@@ -28,10 +28,10 @@
 
       </div>
       <div class="col-lg-8 mt-3">
-      <a href="mypage/edit" class="btn mypage-btn" role="button" aria-pressed="true"><button type="button" class="btn btn-primary btn-lg active mr-4 text-center">ログイン情報を編集</button></a>
-      <a href="mypage/profile" class="btn mypage-btn" role="button" aria-pressed="true"><button type="button" class="btn btn-primary btn-lg active mr-4 text-center">プロフィールを編集</button></a>
+      <a href="{{route('mypage.edit')}}" class="btn mypage-btn" role="button" aria-pressed="true"><button type="button" class="btn btn-primary btn-lg active mr-4 text-center">ログイン情報を編集</button></a>
+      <a href="{{route('mypage.profile')}}" class="btn mypage-btn" role="button" aria-pressed="true"><button type="button" class="btn btn-primary btn-lg active mr-4 text-center">プロフィールを編集</button></a>
 
-      
+
       <div id="app" class="card mt-4">
         <ul class="nav nav-tabs">
           <li class="nav-item w-33">
@@ -62,9 +62,9 @@
                       <time class="text-secondary ml-3 mt-3">
                           {{ $comment->created_at->format('Y.m.d H:i') }}
                       </time>
-                      
+
                     </div>
-                    
+
                     <p class="mt-2">
                         {!! nl2br(e($comment->body)) !!}
                     </p>
@@ -77,19 +77,19 @@
               {{$receives->links()}}
               </div>
         </div>
-        
-        
-        
-      </div> 
-        
+
+
+
+      </div>
+
         </div>
 
-      
+
       </div>
-      
+
 
     </div>
-  
-  
+
+
 </div>
 @endsection
