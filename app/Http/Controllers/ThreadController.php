@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ThreadRequest;
 use App\Thread;
 use Auth;
 
@@ -35,19 +36,15 @@ class ThreadController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ThreadRequest $request)
     {
-        $rule = [
-            'title' => ['required', 'string'], // スレ名
-        ];
-        $this->validate($request, $rule);
-        
-        
+
+
         Thread::create([
             'user_id'=> Auth::id(),
             'title' => $request->title
         ]);
-        
+
         return redirect()->to('message');
     }
 
@@ -69,9 +66,9 @@ class ThreadController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Thread $thread)
     {
-        //
+        return view('message.edit', ['thread' => $thread]);
     }
 
     /**
@@ -81,9 +78,16 @@ class ThreadController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ThreadRequest $request, Thread $thread)
     {
-        //
+
+
+        $thread->fill($request->validated())->save();
+
+        session()->flash('msg_success', 'スレッドを編集しました');
+
+        return redirect()->to('message');
+
     }
 
     /**
@@ -92,8 +96,12 @@ class ThreadController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Thread $thread)
     {
-        //
+        $thread->delete();
+
+        session()->flash('msg_success', 'スレッドを削除しました');
+
+        return redirect()->to('message');
     }
 }
