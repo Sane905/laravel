@@ -22,11 +22,10 @@ class MypageController extends Controller
     public function index()
     {
         $user = Auth::id();
-        $users = Profile::where('user_id',$user)->first();
-        $receives = $users->comment()->orderBy('created_at','desc')->paginate(5);
+        $users = Profile::with('user')->where('user_id',$user)->first();
+        $receives = $users->comment()->latest()->get();
 
-
-        return view('mypage.index')->with(['users'=>$users,'receives'=>$receives]);
+        return view('mypage.index', compact('users','receives'));
     }
 
     /**
@@ -63,7 +62,7 @@ class MypageController extends Controller
 
 
 
-        return view('mypage.member')->with('users',$users);
+        return view('mypage.member', compact('users'));
     }
 
     /**
@@ -76,7 +75,7 @@ class MypageController extends Controller
     public function edit()
     {
         $auth = Auth::user();
-        return view('mypage.edit',['auth'=>$auth]);
+        return view('mypage.edit', compact('auth'));
 
     }
 
@@ -106,7 +105,7 @@ class MypageController extends Controller
         session()->flash('flash_message', 'ログイン情報の変更が完了しました');
 
 
-        return redirect('/mypage');
+        return redirect()->to('mypage');
     }
 
     /**
@@ -123,7 +122,7 @@ class MypageController extends Controller
 
         $profile = Auth::id();
         $profiles = Profile::find($profile);
-        return view('mypage.profile',['profiles'=>$profiles]);
+        return view('mypage.profile', compact('profiles'));
     }
 
     public function ProfileUpdate(ProfileRequest $request) {
@@ -139,7 +138,7 @@ class MypageController extends Controller
         $profiles->gender = $request->gender;
 
 
-        
+
 
         if($request->hasFile('image')){
             $url = $request->file('image');
@@ -166,39 +165,38 @@ class MypageController extends Controller
     public function send()
     {
         $user = Auth::id();
-        $users = Profile::where('user_id',$user)->first();
-        $sends = User::find($user)->comment()->orderBy('created_at','desc')->get();
-        return view('mypage.send')->with(['users'=>$users,'sends'=>$sends]);
+        $users = Profile::with('user')->where('user_id',$user)->first();
+        $sends = User::find($user)->comment()->latest()->get();
+        return view('mypage.send', compact('users', 'sends'));
     }
 
     public function favorite()
     {
         $user = Auth::id();
-        $users = Profile::where('user_id',$user)->first();
-        $favorites = $users->users()->orderBy('created_at','desc')->get();
-        return view('mypage.favorite')->with(['users'=>$users,'favorites'=>$favorites]);
+        $users = Profile::with('user')->where('user_id',$user)->first();
+        $favorites = $users->users()->latest()->get();
+        return view('mypage.favorite', compact('users', 'favorites'));
     }
 
     public function good()
     {
         $user = Auth::id();
-        $users = Profile::where('user_id',$user)->first();
-        $goods = User::find($user)->favorites()->orderBy('created_at','desc')->get();
+        $users = Profile::with('user')->where('user_id',$user)->first();
+        $goods = User::find($user)->favorites()->latest()->get();
 
-        return view('mypage.good')->with(['users'=>$users,'goods'=>$goods]);
+        return view('mypage.good', compact('users', 'goods'));
     }
 
     public function follow()
     {
         $user = Auth::id();
         $users = Profile::where('user_id',$user)->first();
-        $receives = $users->comment()->orderBy('created_at','desc')->paginate(5);
         $favorite = User::find($user)->favorites();
-        $goods = User::find($user)->favorites()->orderBy('created_at','desc')->get();
+        $goods = User::find($user)->favorites()->latest()->get();
         $relative = $favorite->pluck('profiles.user_id')->toArray();
-        $follows = $users->users()->whereIn('users.id',$relative)->orderBy('created_at','desc')->get();
+        $follows = $users->users()->whereIn('users.id',$relative)->latest()->get();
 
-        return view('mypage.follow')->with(['users'=>$users,'follows'=>$follows]);
+        return view('mypage.follow', compact('users', 'follows'));
     }
 
 
